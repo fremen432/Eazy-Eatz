@@ -1,6 +1,8 @@
+<h1 align="center"> Eazy Eatz</h1>
+
 <h2 align="center">Group Project 1 - Module 7 & Module 8</h2>
 
-<h2 align="center"><a href=""><strong>View Demo</strong></a></h2>
+<h3 align="center"><a href=""><strong>View Demo</strong></a></h3>
 
 ## About The Project
 
@@ -15,6 +17,7 @@
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [TailwindCSS](https://tailwindcss.com/)
 - [jQuery](https://jquery.com)
+- [Spoonacular](https://spoonacular.com/food-api/docs)
 
 ## Project Requirements
 
@@ -29,7 +32,7 @@
 - Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
 - Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
-### ARTHORS AND CONTRIBUTORS
+### AUTHORS AND CONTRIBUTORS
 
 - [Clayton](https://github.com/fremen432)
 
