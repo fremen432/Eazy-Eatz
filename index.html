@@ -5,11 +5,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/box.css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
     <title>Document</title>
 </head>
 <body>
     
-    
+    <header class="box">
+        <h1 class="flex container mx-auto bg-secondary justify-center">Project Name</h1>
+    </header>
+
+    <div class="flex flex-row justify-between box">
+
+        <div id="content-left" class="flex flex-col box w-1/4">
+            <h2 class="flex justify-center">Recipie Search</h2>
+            <input class="box" name="" id="" option=""></input>
+            <ul name="Recipies" id="reciepie-ul" class="box">
+                <!-- dynamically generate li elements for recipies -->
+                <li>Ex recipe 1</li>
+                <li>Ex recipe 2</li>
+                <li>Ex recipe 3</li>
+                <li>Ex recipe 4</li>
+            </ul>
+            <!-- Button that shows previous recipe -->
+            <button class="btn box" type="button">Previous Grocery</button>
+        </div>
+
+        <div id="content-mid" class="flex flex-col box w-1/2">
+            <div id="mid-1" class="flex flex-row box">
+
+                <div class="flex flex-col box w-1/2">
+                    <h2 class="flex justify-center">Ingredient List</h2>
+                    <ul name="Ingredient List" id="ingredient-list-ul" class="box">
+                        <!-- dynamically generate li elements for recipies -->
+                        <li>Ex ingredient 1</li>
+                        <li>Ex ingredient 2</li>
+                        <li>Ex ingredient 3</li>
+                        <li>Ex ingredient 4</li>
+                    </ul>
+                </div>
+                <div class="flex flex-col box w-1/2">
+                    <h2 class="flex justify-center">Selected Ingredients</h2>
+                    <!-- Dynamically generated ul/option list -->
+                    <ul name="Selected Ingredients" id="selected-ingredient-ul" class="box">
+                        <!-- dynamically generate li elements for recipies -->
+                        <li>Ex ingredient 1</li>
+                        <li>Ex ingredient 2</li>
+                        <li>Ex ingredient 3</li>
+                        <li>Ex ingredient 4</li>
+                    </ul>
+                    <button>Confirm</button>
+                </div>
+
+            </div>
+
+            <div class="flex w-full box justify-center" id="mid-2">
+                <h2>Drag/Drop to remove</h2>
+            </div>
+
+        </div>
+
+        <div id="content-right" class="flex flex-col box w-1/4 items-center">
+            <h2>Groceries</h2>
+            <ul name="Selected Ingredients" id="selected-ingredient-ul" class="box">
+                <!-- dynamically generate li elements for recipies -->
+                <li>Ex ingredient 1</li>
+                <li>Ex ingredient 2</li>
+                <li>Ex ingredient 3</li>
+                <li>Ex ingredient 4</li>
+            </ul>
+        </div>
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
