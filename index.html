@@ -1,86 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/box.css">
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- <link rel="stylesheet" href="./assets/css/tailwind.css" /> -->
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+		<title>Document</title>
+	</head>
+	<body class="bg-gray-100">
+		<!-- header -->
+		<header	class="text-center text-6xl text-green-500 max-w-md mx-auto py-2">Eazy Eatz</header>
 
-    <title>Document</title>
-</head>
-<body>
-    
-    <header class="box">
-        <h1 class="flex container mx-auto bg-secondary justify-center">Project Name</h1>
-    </header>
+		<div class="flex flex-row justify-between ">
+			<div id="content-left" class="flex flex-col  w-1/4">
 
-    <div class="flex flex-row justify-between box">
+                <!-- recipe search -->
+				<h1	class="m-2 text-center text-2xl font-bold text-green-500 sm:text-4xl">Recipe Search</h1>
+				<input class="" name="" id="" option=""></input>
+				<ul name="Recipes" id="reciepe-ul" class="">
+					<!-- dynamically generate li elements for recipes -->
+					<li>Ex recipe 1</li>
+					<li>Ex recipe 2</li>
+					<li>Ex recipe 3</li>
+					<li>Ex recipe 4</li>
+				</ul>
 
-        <div id="content-left" class="flex flex-col box w-1/4">
-            <h2 class="flex justify-center">Recipie Search</h2>
-            <input class="box" name="" id="" option=""></input>
-            <ul name="Recipies" id="reciepie-ul" class="box">
-                <!-- dynamically generate li elements for recipies -->
-                <li>Ex recipe 1</li>
-                <li>Ex recipe 2</li>
-                <li>Ex recipe 3</li>
-                <li>Ex recipe 4</li>
-            </ul>
-            <!-- Button that shows previous recipe -->
-            <button class="btn box" type="button">Previous Grocery</button>
-        </div>
+				<!-- Button that shows previous recipe -->
+				<button class="btn btn-secondary" type="button">Previous Grocery</button>
+			</div>
 
-        <div id="content-mid" class="flex flex-col box w-1/2">
-            <div id="mid-1" class="flex flex-row box">
+			<div id="content-mid" class="flex flex-col  w-1/2">
+				<div id="mid-1" class="flex flex-row ">
+					<div class="flex flex-col  w-1/2">
 
-                <div class="flex flex-col box w-1/2">
-                    <h2 class="flex justify-center">Ingredient List</h2>
-                    <ul name="Ingredient List" id="ingredient-list-ul" class="box">
-                        <!-- dynamically generate li elements for recipies -->
-                        <li>Ex ingredient 1</li>
-                        <li>Ex ingredient 2</li>
-                        <li>Ex ingredient 3</li>
-                        <li>Ex ingredient 4</li>
-                    </ul>
-                </div>
-                <div class="flex flex-col box w-1/2">
-                    <h2 class="flex justify-center">Selected Ingredients</h2>
-                    <!-- Dynamically generated ul/option list -->
-                    <ul name="Selected Ingredients" id="selected-ingredient-ul" class="box">
-                        <!-- dynamically generate li elements for recipies -->
-                        <li>Ex ingredient 1</li>
-                        <li>Ex ingredient 2</li>
-                        <li>Ex ingredient 3</li>
-                        <li>Ex ingredient 4</li>
-                    </ul>
-                    <button>Confirm</button>
-                </div>
+                        <!-- ingredient list -->
+						<h1 class="m-2 text-center text-2xl font-bold text-green-500 sm:text-4xl">Ingredient List</h1>
+						<ul name="Ingredient List" id="ingredient-list-ul" class="">
+							<!-- dynamically generate li elements for recipies -->
+							<li>Ex ingredient 1</li>
+							<li>Ex ingredient 2</li>
+							<li>Ex ingredient 3</li>
+							<li>Ex ingredient 4</li>
+						</ul>
+					</div>
+					<div class="flex flex-col  w-1/2">
+						<h1 class="m-2 text-center text-2xl font-bold text-green-500 sm:text-4xl">Selected Ingredients</h1>
+						<!-- Dynamically generated ul/option list -->
+						<ul name="Selected Ingredients" id="selected-ingredient-ul" class="" >
+							<!-- dynamically generate li elements for recipies -->
+							<li>Ex ingredient 1</li>
+							<li>Ex ingredient 2</li>
+							<li>Ex ingredient 3</li>
+							<li>Ex ingredient 4</li>
+						</ul>
+                        <!-- selected ingredients confirm button -->
+						<button class="btn btn-primary shadow-lg transform transition hover:-translate-y-0.5" type="button">Confirm</button>
+					</div>
+				</div>
 
-            </div>
+				<div class="flex w-full  justify-center" id="mid-2">
+					<h2>Drag/Drop to remove</h2>
+				</div>
+			</div>
 
-            <div class="flex w-full box justify-center" id="mid-2">
-                <h2>Drag/Drop to remove</h2>
-            </div>
+            <!-- grocery list -->
+			<div id="content-right" class="flex flex-col  w-1/4">
+				<h1 class="m-2 text-center text-2xl font-bold text-green-500 sm:text-4xl"> Groceries </h1>
+				<ul name="Selected Ingredients" id="selected-ingredient-ul" class="">
+					<!-- dynamically generate li elements for recipies -->
+					<li>Ex ingredient 1</li>
+					<li>Ex ingredient 2</li>
+					<li>Ex ingredient 3</li>
+					<li>Ex ingredient 4</li>
+				</ul>
+			</div>
+		</div>
 
-        </div>
-
-        <div id="content-right" class="flex flex-col box w-1/4 items-center">
-            <h2>Groceries</h2>
-            <ul name="Selected Ingredients" id="selected-ingredient-ul" class="box">
-                <!-- dynamically generate li elements for recipies -->
-                <li>Ex ingredient 1</li>
-                <li>Ex ingredient 2</li>
-                <li>Ex ingredient 3</li>
-                <li>Ex ingredient 4</li>
-            </ul>
-        </div>
-
-
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script>
-</body>
+		<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script> -->
+	</body>
 </html>
