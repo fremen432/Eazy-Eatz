@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<!-- <link rel="stylesheet" href="./assets/css/tailwind.css" /> -->
+		<link rel="stylesheet" href="./assets/css/tailwind.css" />
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 		<title>Document</title>
 	</head>
@@ -17,13 +17,14 @@
 
                 <!-- recipe search -->
 				<h1	class="m-2 text-center text-2xl font-bold text-green-500 sm:text-4xl">Recipe Search</h1>
-				<input class="" name="" id="" option=""></input>
-				<ul name="Recipes" id="reciepe-ul" class="">
+				<input  value="" class="" name="" id="search" option=""></input>
+				<button onclick="getFood()" type="submit">Submit</button>
+				<ul name="Recipes" id="recipe-ul" class="">
 					<!-- dynamically generate li elements for recipes -->
-					<li>Ex recipe 1</li>
+					<!-- <li>Ex recipe 1</li>
 					<li>Ex recipe 2</li>
 					<li>Ex recipe 3</li>
-					<li>Ex recipe 4</li>
+					<li>Ex recipe 4</li> -->
 				</ul>
 
 				<!-- Button that shows previous recipe -->
@@ -77,7 +78,7 @@
 			</div>
 		</div>
 
-		<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script> -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
 	</body>
 </html>
