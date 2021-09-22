@@ -10,24 +10,6 @@
     <img src="./assets/images/screenshot.gif" width="400px"> 
 </div>
 
-## User Story
-
-```
-AS A developer seeking information about what this app does,
-I WANT to see a user story and acceptance criteria which clearly explains who will be using this application, what the applications purpose is and all the features the application should contain upon completion,
-SO THAT I can know what the purpose of this app is and what I should expect when using the app.
-```
-
-## Acceptance Criteria
-
-```
-GIVEN I am reading the User Story and Acceptance criteria for this application,
-WHEN I read the User Story,
-THEN I see the type of user who will most likely be using this application and how the user will use the application.
-WHEN I read the Acceptance Criteria,
-THEN I see all the criteria the application will include when finished.
-```
-
 ### Built With
 
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
