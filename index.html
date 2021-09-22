@@ -5,6 +5,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./assets/css/styles.css" />
+		<link rel="stylesheet" href="./assets/css/tailwind.css" />
+		<link rel="stylesheet" href="./assets/css/box.css" />
 		<link href="./assets/css/tailwind.css" rel="stylesheet" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,20 +25,15 @@
 	</head>
 	<body class="" style="font-family: Ubuntu, serif">
 		<!-- header logo -->
-		<div class="relative h-64 m-8 overflow-hidden rounded-lg">
-			<div class="absolute block">
-				<img
-					class="max-w-md mx-auto"
-					src="./assets/images/logo.png"
-					alt="Eazy Eats recipe finder"
-				/>
-			</div>
+	<nav class="container mx-auto relative select-none bg-grey w-full box">
+		<div class="h-12">
 		</div>
+	</nav>
 
 		<!-- recipe search -->
-		<div class="container">
-			<div class="flex justify-center">
-				<div class="bg-white shadow-xl rounded-lg w-1/2 m-4">
+		<div class="container mx-auto box">
+			<div id="content-left" class="flex flex-row">
+				<div class="box">
 					<div class="relative">
 						<div class="absolute top-4 left-3">
 							<i
@@ -70,37 +67,13 @@
 								Search
 							</button>
 						</div>
-						<ul class="divide-y divide-green-300">
-							<li class="p-4 hover:bg-green-100 cursor-pointer">
-								Example recipe
-							</li>
-							<li class="p-4 hover:bg-green-100 cursor-pointer">
-								Example recipe
-							</li>
-							<li class="p-4 hover:bg-green-100 cursor-pointer">
-								Example recipe
-							</li>
-							<li class="p-4 hover:bg-green-100 cursor-pointer">
-								Example recipe
-							</li>
-						</ul>
 					</div>
 				</div>
 			</div>
-					</div>
-				</div>
 
-				<!-- <ul name="Recipes" id="recipe-ul" class="">
-				dynamically generate li elements for recipes
-					<li>Ex recipe 1</li>
-					<li>Ex recipe 2</li>
-					<li>Ex recipe 3</li>
-					<li>Ex recipe 4</li>
-				</ul> -->
-
-				<!-- <div class="container">
-					<div class="flex justify-center">
-						<div class="bg-white shadow-xl rounded-lg w-1/2 m-4">
+				<div class="container">
+					<div class="flex">
+						<div class="bg-white shadow-xl rounded-lg w-full m-4">
 							<ul class="divide-y divide-green-300">
 								<li class="p-4 hover:bg-green-100 cursor-pointer">
 									Example recipe
@@ -117,7 +90,7 @@
 							</ul>
 						</div>
 					</div>
-				</div> -->
+				</div>
 
 				<!-- Button that shows previous recipe -->
 				<button class="btn btn-secondary" type="button">
@@ -125,14 +98,9 @@
 				</button>
 			</div>
 
-			<!-- <div id="content-mid" class="flex flex-col w-1/2">
-				<div id="mid-1" class="flex flex-row">
-					<div class="flex flex-col w-1/2"> -->
-
 			<!-- ingredient list -->
-			<div class="container">
-				<div class="flex justify-center">
-					<div class="bg-white shadow-xl rounded-lg w-1/2 m-4">
+				<div class="container mx-auto box">
+					<div class="bg-white shadow-xl rounded-lg m-4">
 						<h1
 							class="
 								m-2
@@ -159,8 +127,10 @@
 							</li>
 						</ul>
 					</div>
+					</div>
 
-					<div class="flex flex-col w-1/2">
+					<!-- selected ingredients -->
+					<div class="container mx-auto box">
 						<h1
 							class="
 								m-2
@@ -173,16 +143,19 @@
 							Selected Ingredients
 						</h1>
 						<!-- Dynamically generated ul/option list -->
-						<ul
-							name="Selected Ingredients"
-							id="selected-ingredient-ul"
-							class=""
-						>
-							<!-- dynamically generate li elements for recipies -->
-							<li>Ex ingredient 1</li>
-							<li>Ex ingredient 2</li>
-							<li>Ex ingredient 3</li>
-							<li>Ex ingredient 4</li>
+						<ul class="divide-y divide-green-300">
+							<li class="p-4 hover:bg-green-100 cursor-pointer">
+								Example recipe
+							</li>
+							<li class="p-4 hover:bg-green-100 cursor-pointer">
+								Example recipe
+							</li>
+							<li class="p-4 hover:bg-green-100 cursor-pointer">
+								Example recipe
+							</li>
+							<li class="p-4 hover:bg-green-100 cursor-pointer">
+								Example recipe
+							</li>
 						</ul>
 						<!-- selected ingredients confirm button -->
 						<button
@@ -198,29 +171,51 @@
 							Confirm
 						</button>
 					</div>
-				</div>
-
-				<div class="flex w-full justify-center" id="mid-2">
-					<h2>Drag/Drop to remove</h2>
-				</div>
-			</div>
 
 			<!-- grocery list -->
-			<div id="content-right" class="flex flex-col w-1/4">
-				<h1
-					class="m-2 text-center text-2xl font-bold text-green-500 sm:text-4xl"
-				>
-					Groceries
-				</h1>
-				<ul name="Selected Ingredients" id="selected-ingredient-ul" class="">
-					<!-- dynamically generate li elements for recipes -->
-					<li>Ex ingredient 1</li>
-					<li>Ex ingredient 2</li>
-					<li>Ex ingredient 3</li>
-					<li>Ex ingredient 4</li>
-				</ul>
-			</div>
-		</div>
+			<div class="container mx-auto box">
+					<div class="bg-white shadow-xl rounded-lg m-4">
+						<h1
+							class="
+								m-2
+								text-center text-2xl
+								font-bold
+								text-green-500
+								sm:text-4xl
+							"
+						>
+							Grocery List
+						</h1>
+						<ul class="divide-y divide-green-300">
+							<li class="p-4 hover:bg-green-100 cursor-pointer">
+								Example recipe
+							</li>
+							<li class="p-4 hover:bg-green-100 cursor-pointer">
+								Example recipe
+							</li>
+							<li class="p-4 hover:bg-green-100 cursor-pointer">
+								Example recipe
+							</li>
+							<li class="p-4 hover:bg-green-100 cursor-pointer">
+								Example recipe
+							</li>
+						</ul>
+					</div>
+			
+					<div class="container box">
+						<button
+							class="
+								btn btn-tertiary
+								shadow-lg
+								transform
+								transition
+								hover:-translate-y-0.5
+							"
+							type="button"
+						>
+							Drag/Drop to remove
+						</button>
+					</div>
 
 		<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script> -->
