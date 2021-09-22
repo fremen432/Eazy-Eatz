@@ -11,7 +11,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
 			rel="stylesheet"
 		/>
 		<link
@@ -23,7 +23,7 @@
 		/>
 		<title>Document</title>
 	</head>
-	<body class="" style="font-family: Ubuntu, serif">
+	<body class="" style="font-family: Montserrat, serif">
 		<!-- header logo -->
 		<nav
 			class="
@@ -41,196 +41,240 @@
 			<div class="h-12"></div>
 		</nav>
 
-		<!-- recipe search -->
-		<div
-			class="
-				container
-				mx-auto
-				border-2 border-green-200
-				rounded-lg
-				m-2
-				shadow-lg
-			"
-		>
-			<div class="flex flex-row">
-				<div class="">
-					<div class="relative">
-						<div class="absolute top-4 left-3">
-							<i
-								class="fa fa-search text-green-500 z-20 hover:text-green-400"
-							></i>
-						</div>
-						<input
-							type="text"
-							class="
-								h-14
-								w-96
-								pl-10
-								pr-20
-								rounded-lg
-								z-0
-								focus:shadow focus:outline-none
-							"
-							placeholder="Search for a recipe"
-						/>
-						<div class="absolute top-1 right-1">
-							<button
+		<div class="grid grid-flow-col auto-cols-auto">
+			<!-- recipe search -->
+			<div
+				class="
+					max-w-md
+					mx-auto
+					border-2 border-green-200
+					rounded-lg
+					m-2
+					shadow-lg
+				"
+			>
+				<div class="flex flex-row">
+					<div class="">
+						<div class="relative">
+							<div class="absolute top-4 left-3">
+								<i
+									class="fa fa-search text-green-500 z-20 hover:text-green-400"
+								></i>
+							</div>
+							<input
+								type="text"
 								class="
-									btn btn-secondary
-									bg-green-500
-									hover:bg-green-400
-									text-white
-									shadow-lg
-									transform
-									transition
-									hover:-translate-y-0.5
+									h-14
+									w-96
+									pl-10
+									pr-20
+									rounded-lg
+									z-0
+									focus:shadow focus:outline-none
 								"
-							>
-								Search
-							</button>
+								placeholder="Search for a recipe"
+							/>
+							<div class="absolute top-1 right-1">
+								<button
+									class="
+										btn btn-secondary
+										bg-green-500
+										hover:bg-green-400
+										text-white
+										shadow-lg
+										transform
+										transition
+										hover:-translate-y-0.5
+									"
+								>
+									Search
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
+
+				<div class="container">
+					<div class="flex">
+						<div class="bg-white shadow-xl rounded-lg w-full m-4">
+							<ul class="divide-y divide-green-300">
+								<li class="p-4 hover:bg-green-100 cursor-pointer">
+									Example recipe
+								</li>
+								<li class="p-4 hover:bg-green-100 cursor-pointer">
+									Example recipe
+								</li>
+								<li class="p-4 hover:bg-green-100 cursor-pointer">
+									Example recipe
+								</li>
+								<li class="p-4 hover:bg-green-100 cursor-pointer">
+									Example recipe
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- Button that shows previous recipe -->
+				<button
+					class="
+						btn btn-secondary
+						bg-green-500
+						hover:bg-green-400
+						text-white
+						shadow-lg
+						transform
+						transition
+						hover:-translate-y-0.5
+					"
+					type="button"
+				>
+					Previous Groceries
+				</button>
 			</div>
 
-			<div class="container">
-				<div class="flex">
-					<div class="bg-white shadow-xl rounded-lg w-full m-4">
-						<ul class="divide-y divide-green-300">
-							<li class="p-4 hover:bg-green-100 cursor-pointer">
-								Example recipe
-							</li>
-							<li class="p-4 hover:bg-green-100 cursor-pointer">
-								Example recipe
-							</li>
-							<li class="p-4 hover:bg-green-100 cursor-pointer">
-								Example recipe
-							</li>
-							<li class="p-4 hover:bg-green-100 cursor-pointer">
-								Example recipe
-							</li>
-						</ul>
-					</div>
+			<!-- ingredient list -->
+			<div
+				class="
+					max-w-md
+					mx-auto
+					border-2 border-green-200
+					rounded-lg
+					m-2
+					shadow-lg
+				"
+			>
+				<div class="bg-white shadow-xl rounded-lg m-4">
+					<h1
+						class="
+							m-2
+							text-center text-2xl
+							font-bold
+							text-green-500
+							sm:text-4xl
+						"
+					>
+						Ingredient List
+					</h1>
+					<ul class="divide-y divide-green-300">
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+					</ul>
 				</div>
 			</div>
 
-			<!-- Button that shows previous recipe -->
-			<button
+			<!-- selected ingredients -->
+			<div
 				class="
-					btn btn-secondary
-					bg-green-500
-					hover:bg-green-400
-					text-white
+					max-w-md
+					mx-auto
+					border-2 border-green-200
+					rounded-lg
+					m-2
 					shadow-lg
-					transform
-					transition
-					hover:-translate-y-0.5
 				"
-				type="button"
 			>
-				Previous Groceries
-			</button>
-		</div>
+				<div class="bg-white shadow-xl rounded-lg m-4">
+					<h1
+						class="
+							m-4
+							text-center text-2xl
+							font-bold
+							text-green-500
+							sm:text-4xl
+						"
+					>
+						Selected Ingredients
+					</h1>
+					<!-- Dynamically generated ul/option list -->
+					<ul class="divide-y divide-green-300">
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+					</ul>
+				</div>
 
-		<!-- ingredient list -->
-		<div
-			class="
-				container
-				mx-auto
-				border-2 border-green-200
-				rounded-lg
-				m-2
-				shadow-lg
-			"
-		>
-			<div class="bg-white shadow-xl rounded-lg m-4">
-				<h1
-					class="m-2 text-center text-2xl font-bold text-green-500 sm:text-4xl"
+				<!-- selected ingredients confirm button -->
+				<button
+					class="
+						btn btn-primary
+						bg-indigo-500
+						hover:bg-indigo-400
+						shadow-lg
+						transform
+						transition
+						hover:-translate-y-0.5
+					"
+					type="button"
 				>
-					Ingredient List
-				</h1>
-				<ul class="divide-y divide-green-300">
-					<li class="p-4 hover:bg-green-100 cursor-pointer">Example recipe</li>
-					<li class="p-4 hover:bg-green-100 cursor-pointer">Example recipe</li>
-					<li class="p-4 hover:bg-green-100 cursor-pointer">Example recipe</li>
-					<li class="p-4 hover:bg-green-100 cursor-pointer">Example recipe</li>
-				</ul>
-			</div>
-		</div>
-
-		<!-- selected ingredients -->
-		<div
-			class="
-				container
-				mx-auto
-				border-2 border-green-200
-				rounded-lg
-				m-2
-				shadow-lg
-			"
-		>
-			<div class="bg-white shadow-xl rounded-lg m-4">
-				<h1
-					class="m-4 text-center text-2xl font-bold text-green-500 sm:text-4xl"
-				>
-					Selected Ingredients
-				</h1>
-				<!-- Dynamically generated ul/option list -->
-				<ul class="divide-y divide-green-300">
-					<li class="p-4 hover:bg-green-100 cursor-pointer">Example recipe</li>
-					<li class="p-4 hover:bg-green-100 cursor-pointer">Example recipe</li>
-					<li class="p-4 hover:bg-green-100 cursor-pointer">Example recipe</li>
-					<li class="p-4 hover:bg-green-100 cursor-pointer">Example recipe</li>
-				</ul>
+					Confirm
+				</button>
 			</div>
 
-			<!-- selected ingredients confirm button -->
-			<button
+			<!-- grocery list -->
+			<div
 				class="
-					btn btn-primary
-					bg-indigo-500
-					hover:bg-indigo-400
+					max-w-md
+					mx-auto
+					border-2 border-green-200
+					rounded-lg
+					m-2
 					shadow-lg
-					transform
-					transition
-					hover:-translate-y-0.5
 				"
-				type="button"
 			>
-				Confirm
-			</button>
-		</div>
-
-		<!-- grocery list -->
-		<div
-			class="
-				container
-				mx-auto
-				border-2 border-green-200
-				rounded-lg
-				m-2
-				shadow-lg
-			"
-		>
-			<div class="bg-white shadow-xl rounded-lg m-4">
-				<h1
-					class="m-4 text-center text-2xl font-bold text-green-500 sm:text-4xl"
-				>
-					Grocery List
-				</h1>
-				<ul class="divide-y divide-green-300">
-					<li class="p-4 hover:bg-green-100 cursor-pointer">Example recipe</li>
-					<li class="p-4 hover:bg-green-100 cursor-pointer">Example recipe</li>
-					<li class="p-4 hover:bg-green-100 cursor-pointer">Example recipe</li>
-					<li class="p-4 hover:bg-green-100 cursor-pointer">Example recipe</li>
-				</ul>
+				<div class="bg-white shadow-xl rounded-lg m-4">
+					<h1
+						class="
+							m-4
+							text-center text-2xl
+							font-bold
+							text-green-500
+							sm:text-4xl
+						"
+					>
+						Grocery List
+					</h1>
+					<ul class="divide-y divide-green-300">
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 
 		<!-- Drag/Drop to remove -->
 		<div
 			class="
-				container
+				max-w-md
 				mx-auto
 				border-2 border-green-200
 				rounded-lg
@@ -255,7 +299,11 @@
 			</button>
 		</div>
 
-		<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script> -->
+		<!-- <script
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"
+		></script>
+		<script src="./assets/js/script.js"></script> -->
 	</body>
 </html>
