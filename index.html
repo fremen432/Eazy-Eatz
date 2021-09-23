@@ -223,6 +223,7 @@
 					rounded-lg
 					m-2
 					shadow-lg
+					print-this
 				"
 			>
 				<div class="bg-white shadow-xl rounded-lg m-4">
@@ -252,28 +253,50 @@
 						</li>
 					</ul>
 				</div>
+				
 			</div>
 		</div>
-
+		
 		<!-- Drag/Drop to remove -->
 		<div class="max-w-md mx-auto m-2">
 			<button
-				class="
-					btn btn-secondary
-					bg-red-500
-					hover:bg-red-400
-					text-white
-					shadow-lg
-					transform
-					transition
-					hover:-translate-y-0.5
-				"
-				type="button"
+			class="
+			btn btn-secondary
+			bg-red-500
+			hover:bg-red-400
+			text-white
+			shadow-lg
+			transform
+			transition
+			hover:-translate-y-0.5
+			"
+			type="button"
 			>
-				Drag/Drop to remove
+			Drag/Drop to remove
 			</button>
 		</div>
-
+	
+		<!-- Print Button -->
+		<div class="max-w-md mx-auto m-2">
+			<button
+			id="printBtn"
+			class="
+			btn btn-secondary
+			bg-red-500
+			hover:bg-red-400
+			text-white
+			shadow-lg
+			transform
+			transition
+			hover:-translate-y-0.5
+			"
+			type="button"
+			onclick="window.print()"
+			>
+			Print Grocery List
+			</button>
+		</div>
+		
 		<script
 			src="https://code.jquery.com/jquery-3.6.0.min.js"
 			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
