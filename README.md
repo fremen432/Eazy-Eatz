@@ -7,7 +7,7 @@
 </h2>
 
 <h1 align="center">
-    <a href="https://fremen432.github.io/Eazy-Eatz/">
+    <a href="https://fremen432.github.io/Eazy-Eatz/" target="_blank">
      View Demo
     </a>
 </h1>
