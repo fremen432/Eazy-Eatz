@@ -49,27 +49,26 @@ function getFood() {
                 // PRICE CONVERTER
                 var price = Math.round(information.pricePerServing);
                 price/=100;
-                console.log("Price/Serving: $" + price);
+                
+                console.log("Price/Serving: $" + price + " Estimated Total Price: $" + (price*=information.servings));
             });
         });
     }
 };
 var displayRecipes = function(recipeList) {
-
-    
-
-    if (recipeList.results.title) {
-        recipeTitle.textContent = "";
-
-    } 
-    else {
-        for(var i = 0; i < recipeList.results.length; i++) {
+    searchRecipe.textContent = "";
+    for(var i = 0; i < recipeList.results.length; i++) {
             
-            //console.log("pizza " + recipeList.results[i].title);
-            var recipeTitle = document.createElement("li");
-            recipeTitle.textContent = recipeList.results[i].title;
-            searchRecipe.appendChild(recipeTitle);
-        }
+        //console.log("pizza " + recipeList.results[i].title);
+        var recipeTitle = document.createElement("li");
+        recipeTitle.classList = "p-4 hover:bg-green-100 cursor-pointer";
+        recipeTitle.textContent = recipeList.results[i].title;
+        searchRecipe.appendChild(recipeTitle);
     }
+
+};
+
+var displayIngredients = function() {
+    
 };
 

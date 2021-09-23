@@ -74,8 +74,11 @@
 									z-0
 									focus:shadow focus:outline-none
 								"
+								id="search"
+								value=""
 								placeholder="Search for a recipe"
 							/>
+							
 							<div class="absolute top-1 right-1">
 								<button
 									class="
@@ -88,8 +91,12 @@
 										transition
 										hover:-translate-y-0.5
 									"
-									id="search"
-									onclick="getFood()"
+									type="
+										submit
+									"
+									onclick="
+										getFood()
+									"
 								>
 									Search
 								</button>
@@ -101,19 +108,8 @@
 				<div class="container">
 					<div class="flex">
 						<div class="bg-white shadow-xl rounded-lg w-full m-4">
-							<ul class="divide-y divide-green-300">
-								<li class="p-4 hover:bg-green-100 cursor-pointer">
-									Example recipe
-								</li>
-								<li class="p-4 hover:bg-green-100 cursor-pointer">
-									Example recipe
-								</li>
-								<li class="p-4 hover:bg-green-100 cursor-pointer">
-									Example recipe
-								</li>
-								<li class="p-4 hover:bg-green-100 cursor-pointer">
-									Example recipe
-								</li>
+							<ul class="divide-y divide-green-300" id="recipe-ul">
+								
 							</ul>
 						</div>
 					</div>
@@ -294,11 +290,11 @@
 			</button>
 		</div>
 
-		<!-- <script
+		<script
 			src="https://code.jquery.com/jquery-3.6.0.min.js"
 			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 			crossorigin="anonymous"
 		></script>
-		<script src="./assets/js/script.js"></script> -->
+		<script src="./assets/js/script.js"></script>
 	</body>
 </html>
