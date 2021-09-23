@@ -71,4 +71,3 @@ var displayRecipes = function(recipeList) {
 var displayIngredients = function() {
     
 };
-
