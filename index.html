@@ -4,126 +4,299 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./assets/css/styles.css" />
+		<link rel="stylesheet" href="./assets/css/tailwind.css" />
+		<link rel="stylesheet" href="./assets/css/box.css" />
+		<link href="./assets/css/tailwind.css" rel="stylesheet" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+			integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
 		<title>Document</title>
 	</head>
-	<body class="" style="font-family: Ubuntu, serif">
+	<body class="" style="font-family: Montserrat, serif">
 		<!-- header logo -->
-		<div class="relative h-64 m-8 overflow-hidden rounded-lg">
-			<div class="absolute block">
-				<img
-					class="max-w-md mx-auto"
-					src="./assets/images/logo.png"
-					alt="Eazy Eats recipe finder"
-				/>
-			</div>
-		</div>
+		<nav
+			class="
+				sm:container sm:mx-auto
+				xl:grid xl:grid-flow-col xl:auto-cols-auto
+				relative
+				select-none
+				bg-grey
+				w-full
+				border-2 border-green-200
+				rounded-lg
+				m-2
+			"
+		>
+			<div class="h-12"></div>
+		</nav>
 
-		<div class="flex flex-row justify-between">
-			<div id="content-left" class="flex flex-col w-1/4">
-				<!-- recipe search -->
-				<!-- <h1	class="m-2 text-center text-2xl font-bold text-green-500 sm:text-4xl">Recipe Search</h1>
-				<input class="" name="" id="" option=""></input> -->
+		<div
+			class="sm:container sm:mx-auto xl:grid xl:grid-flow-col xl:auto-cols-auto"
+		>
+			<!-- recipe search -->
+			<div
+				class="
+					max-w-md
+					mx-auto
+					border-2 border-green-200
+					rounded-lg
+					m-2
+					shadow-lg
+				"
+			>
+				<div class="flex flex-row">
+					<div class="">
+						<div class="relative">
+							<div class="absolute top-4 left-3">
+								<i
+									class="fa fa-search text-green-500 z-20 hover:text-green-400"
+								></i>
+							</div>
+							<input
+								type="text"
+								class="
+									h-14
+									w-96
+									pl-10
+									pr-20
+									rounded-lg
+									z-0
+									focus:shadow focus:outline-none
+								"
+								placeholder="Search for a recipe"
+							/>
+							<div class="absolute top-1 right-1">
+								<button
+									class="
+										btn btn-secondary
+										bg-green-500
+										hover:bg-green-400
+										text-white
+										shadow-lg
+										transform
+										transition
+										hover:-translate-y-0.5
+									"
+								>
+									Search
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
 
-				<ul name="Recipes" id="recipe-ul" class="">
-					<!-- dynamically generate li elements for recipes -->
-					<!--<li>Ex recipe 1</li>
-					<li>Ex recipe 2</li>
-					<li>Ex recipe 3</li>
-					<li>Ex recipe 4</li>-->
-				</ul>
+				<div class="container">
+					<div class="flex">
+						<div class="bg-white shadow-xl rounded-lg w-full m-4">
+							<ul class="divide-y divide-green-300">
+								<li class="p-4 hover:bg-green-100 cursor-pointer">
+									Example recipe
+								</li>
+								<li class="p-4 hover:bg-green-100 cursor-pointer">
+									Example recipe
+								</li>
+								<li class="p-4 hover:bg-green-100 cursor-pointer">
+									Example recipe
+								</li>
+								<li class="p-4 hover:bg-green-100 cursor-pointer">
+									Example recipe
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 
 				<!-- Button that shows previous recipe -->
-				<button class="btn btn-secondary" type="button">
-					Previous Grocery
+				<button
+					class="
+						btn btn-secondary
+						bg-green-500
+						hover:bg-green-400
+						text-white
+						shadow-lg
+						transform
+						transition
+						hover:-translate-y-0.5
+					"
+					type="button"
+				>
+					Previous Groceries
 				</button>
 			</div>
 
-			<div id="content-mid" class="flex flex-col w-1/2">
-				<div id="mid-1" class="flex flex-row">
-					<div class="flex flex-col w-1/2">
-						<!-- ingredient list -->
-						<h1
-							class="
-								m-2
-								text-center text-2xl
-								font-bold
-								text-green-500
-								sm:text-4xl
-							"
-						>
-							Ingredient List
-						</h1>
-						<ul name="Ingredient List" id="ingredient-list-ul" class="">
-							<!-- dynamically generate li elements for recipies -->
-							<li>Ex ingredient 1</li>
-							<li>Ex ingredient 2</li>
-							<li>Ex ingredient 3</li>
-							<li>Ex ingredient 4</li>
-						</ul>
-					</div>
-					<div class="flex flex-col w-1/2">
-						<h1
-							class="
-								m-2
-								text-center text-2xl
-								font-bold
-								text-green-500
-								sm:text-4xl
-							"
-						>
-							Selected Ingredients
-						</h1>
-						<!-- Dynamically generated ul/option list -->
-						<ul
-							name="Selected Ingredients"
-							id="selected-ingredient-ul"
-							class=""
-						>
-							<!-- dynamically generate li elements for recipies -->
-							<li>Ex ingredient 1</li>
-							<li>Ex ingredient 2</li>
-							<li>Ex ingredient 3</li>
-							<li>Ex ingredient 4</li>
-						</ul>
-						<!-- selected ingredients confirm button -->
-						<button
-							class="
-								btn btn-primary
-								shadow-lg
-								transform
-								transition
-								hover:-translate-y-0.5
-							"
-							type="button"
-						>
-							Confirm
-						</button>
-					</div>
+			<!-- ingredient list -->
+			<div
+				class="
+					max-w-md
+					mx-auto
+					border-2 border-green-200
+					rounded-lg
+					m-2
+					shadow-lg
+				"
+			>
+				<div class="bg-white shadow-xl rounded-lg m-4">
+					<h1
+						class="
+							m-2
+							text-center text-2xl
+							font-bold
+							text-green-500
+							sm:text-4xl
+						"
+					>
+						Ingredient List
+					</h1>
+					<ul class="divide-y divide-green-300">
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- selected ingredients -->
+			<div
+				class="
+					max-w-md
+					mx-auto
+					border-2 border-green-200
+					rounded-lg
+					m-2
+					shadow-lg
+				"
+			>
+				<div class="bg-white shadow-xl rounded-lg m-4">
+					<h1
+						class="
+							m-4
+							text-center text-2xl
+							font-bold
+							text-green-500
+							sm:text-4xl
+						"
+					>
+						Selected Ingredients
+					</h1>
+					<!-- Dynamically generated ul/option list -->
+					<ul class="divide-y divide-green-300">
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+					</ul>
 				</div>
 
-				<div class="flex w-full justify-center" id="mid-2">
-					<h2>Drag/Drop to remove</h2>
-				</div>
+				<!-- selected ingredients confirm button -->
+				<button
+					class="
+						btn btn-primary
+						bg-indigo-500
+						hover:bg-indigo-400
+						shadow-lg
+						transform
+						transition
+						hover:-translate-y-0.5
+					"
+					type="button"
+				>
+					Confirm
+				</button>
 			</div>
 
 			<!-- grocery list -->
-			<div id="content-right" class="flex flex-col w-1/4">
-				<h1
-					class="m-2 text-center text-2xl font-bold text-green-500 sm:text-4xl"
-				>
-					Groceries
-				</h1>
-				<ul name="Selected Ingredients" id="selected-ingredient-ul" class="">
-					<!-- dynamically generate li elements for recipes -->
-					<li>Ex ingredient 1</li>
-					<li>Ex ingredient 2</li>
-					<li>Ex ingredient 3</li>
-					<li>Ex ingredient 4</li>
-				</ul>
+			<div
+				class="
+					max-w-md
+					mx-auto
+					border-2 border-green-200
+					rounded-lg
+					m-2
+					shadow-lg
+				"
+			>
+				<div class="bg-white shadow-xl rounded-lg m-4">
+					<h1
+						class="
+							m-4
+							text-center text-2xl
+							font-bold
+							text-green-500
+							sm:text-4xl
+						"
+					>
+						Grocery List
+					</h1>
+					<ul class="divide-y divide-green-300">
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script> 
+		<!-- Drag/Drop to remove -->
+		<div class="max-w-md mx-auto m-2">
+			<button
+				class="
+					btn btn-secondary
+					bg-red-500
+					hover:bg-red-400
+					text-white
+					shadow-lg
+					transform
+					transition
+					hover:-translate-y-0.5
+				"
+				type="button"
+			>
+				Drag/Drop to remove
+			</button>
+		</div>
+
+		<!-- <script
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"
+		></script>
+		<script src="./assets/js/script.js"></script> -->
 	</body>
 </html>
