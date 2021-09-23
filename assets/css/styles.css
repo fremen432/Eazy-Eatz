@@ -1,3 +1,10 @@
+#logo {
+	display: inline-block;
+	margin: 4px;
+	float: left;
+	width: auto;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,6 +17,9 @@
 		@apply bg-indigo-500 text-white hover:bg-indigo-400 focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-600;
 	}
 	.btn-secondary {
-		@apply bg-green-600 text-gray-800 hover:bg-green-500 focus:ring-green-300 focus:ring-opacity-50 active:bg-green-400;
+		@apply bg-green-500 text-white hover:bg-green-400 focus:ring-green-500 focus:ring-opacity-50 active:bg-green-500;
+	}
+	.btn-tertiary {
+		@apply bg-red-500 text-white hover:bg-red-400 focus:ring-red-500 focus:ring-opacity-50 active:bg-red-500;
 	}
 }
