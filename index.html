@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="./assets/css/tailwind.css" />
 		<link rel="stylesheet" href="./assets/css/box.css" />
 		<link href="./assets/css/tailwind.css" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css%22%3E" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -21,7 +22,7 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
-		<title>Eazy Eats</title>
+		<title>Eazy Eatz</title>
 	</head>
 	<body class="" style="font-family: Montserrat, serif">
 		<!-- header logo -->
@@ -52,6 +53,8 @@
 								></i>
 							</div>
 							<input
+								id="search"
+								value=""
 								type="text"
 								class="
 									h-14
@@ -62,13 +65,13 @@
 									z-0
 									focus:shadow focus:outline-none
 								"
-								id="search"
-								value=""
 								placeholder="Search for a recipe"
 							/>
 
 							<div class="absolute top-1 right-1">
 								<button
+									type="submit"
+									onclick="getFood()"
 									class="
 										btn btn-secondary
 										bg-green-500
@@ -78,12 +81,6 @@
 										transform
 										transition
 										hover:-translate-y-0.5
-									"
-									type="
-										submit
-									"
-									onclick="
-										getFood()
 									"
 								>
 									Search
@@ -96,7 +93,8 @@
 				<div class="container">
 					<div class="flex">
 						<div class="bg-white shadow-xl rounded-lg w-full m-4">
-							<ul class="divide-y divide-green-300" id="recipe-ul"></ul>
+
+							<ul id="recipe-ul" class="divide-y divide-green-300"></ul>
 						</div>
 					</div>
 				</div>
@@ -282,5 +280,8 @@
 			crossorigin="anonymous"
 		></script>
 		<script src="./assets/js/script.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js%22%3E"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js%22%3E"></script>
+		<script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js%22%3E</script>
 	</body>
 </html>
