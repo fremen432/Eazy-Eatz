@@ -1,3 +1,10 @@
+#logo {
+	display: inline-block;
+	margin: 4px;
+	float: left;
+	width: auto;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

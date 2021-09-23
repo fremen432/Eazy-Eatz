@@ -27,8 +27,8 @@
 		<!-- header logo -->
 		<nav
 			class="
-				container
-				mx-auto
+				sm:container sm:mx-auto
+				xl:grid xl:grid-flow-col xl:auto-cols-auto
 				relative
 				select-none
 				bg-grey
@@ -41,7 +41,9 @@
 			<div class="h-12"></div>
 		</nav>
 
-		<div class="grid grid-flow-col auto-cols-auto">
+		<div
+			class="sm:container sm:mx-auto xl:grid xl:grid-flow-col xl:auto-cols-auto"
+		>
 			<!-- recipe search -->
 			<div
 				class="
@@ -272,16 +274,7 @@
 		</div>
 
 		<!-- Drag/Drop to remove -->
-		<div
-			class="
-				max-w-md
-				mx-auto
-				border-2 border-green-200
-				rounded-lg
-				m-2
-				shadow-lg
-			"
-		>
+		<div class="max-w-md mx-auto m-2">
 			<button
 				class="
 					btn btn-secondary
@@ -295,7 +288,7 @@
 				"
 				type="button"
 			>
-				Previous Groceries
+				Drag/Drop to remove
 			</button>
 		</div>
 
