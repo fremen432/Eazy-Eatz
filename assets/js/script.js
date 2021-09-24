@@ -10,7 +10,7 @@ function getFood() {
     //var recipe = window.prompt("RECIPE");
     var recipe = document.querySelector("#search").value;
     if (recipe != "") {
-        var foodApiUrl = "https://api.spoonacular.com/recipes/complexSearch?query=" + recipe + apiDave;
+        var foodApiUrl = "https://api.spoonacular.com/recipes/complexSearch?query=" + recipe + apiDekotes;
         fetch(foodApiUrl)
         .then(function(response) {
             return response.json();
@@ -26,7 +26,7 @@ function getFood() {
                 // if spoon recipe is selected, it retrieves it id and places it in the link
             displayRecipes(data);
             var spoonId = data.results[0].id;
-            var infoApiUrl = "https://api.spoonacular.com/recipes/" + spoonId + "/information?includeNutrition=" + nutritionSearch + apiDave;
+            var infoApiUrl = "https://api.spoonacular.com/recipes/" + spoonId + "/information?includeNutrition=" + nutritionSearch + apiDekotes;
             fetch(infoApiUrl)
             .then(function(response) {
                 return response.json();
@@ -51,6 +51,7 @@ function getFood() {
                 price/=100;
                 
                 console.log("Price/Serving: $" + price + " Estimated Total Price: $" + (price*=information.servings));
+                // displayIngredients(information);
             });
         });
     }
@@ -61,14 +62,36 @@ var displayRecipes = function(recipeList) {
             
         //console.log("pizza " + recipeList.results[i].title);
         var recipeTitle = document.createElement("li");
-        recipeTitle.classList = "p-4 hover:bg-green-100 cursor-pointer";
+        recipeTitle.classList = "p-4 hover:bg-green-100 cursor-pointer recipeTitle";
         recipeTitle.textContent = recipeList.results[i].title;
-        searchRecipe.appendChild(recipeTitle);
+        searchRecipe.appendChild(recipeTitle);    
+
+        // $(".recipeTitle").on("click", function() {
+        
+        //     if (recipeList.results[0].id) {
+        //         console.log(recipeList.results[0].id + " did it work?");
+    
+        //     }
+        //     else {
+        //         console.log("did not work");
+        //     }
+        // });
     }
 
+   
 };
 
-var displayIngredients = function() {
+// var displayIngredients = function(ingriedientList) {
     
-};
+    
+//     var recipeOnClick = $(recipeTitle).click(function() {
+//         console.log(recipeOnClick, "recipe title was clicked!");
+//         for(var i = 0; i < ingriedientList.results.length; i++) {
 
+//             var ingredients = document.querySelector("li");
+//             ingredients.classList = "p-4 hover:bg-green-100 cursor-pointer";
+//             var test = ingredients.textContent = ingriedientList;
+//             console.log(ingriedientList);
+//         }
+//     });
+// };
