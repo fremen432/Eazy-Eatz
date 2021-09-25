@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="./assets/css/tailwind.css" />
 		<link rel="stylesheet" href="./assets/css/box.css" />
 		<link href="./assets/css/tailwind.css" rel="stylesheet" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css%22%3E" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -140,25 +140,14 @@
 					>
 						Ingredient List
 					</h1>
-					<ul class="divide-y divide-green-300">
-						<li class="p-4 hover:bg-green-100 cursor-pointer">
-							Example recipe
-						</li>
-						<li class="p-4 hover:bg-green-100 cursor-pointer">
-							Example recipe
-						</li>
-						<li class="p-4 hover:bg-green-100 cursor-pointer">
-							Example recipe
-						</li>
-						<li class="p-4 hover:bg-green-100 cursor-pointer">
-							Example recipe
-						</li>
+					<ul class="divide-y divide-green-300" id="ingredient-ul">
+						
 					</ul>
 				</div>
 			</div>
 
 			<!-- selected ingredients -->
-			<div
+			<!--<div
 				class="
 					max-w-md
 					mx-auto
@@ -180,8 +169,8 @@
 					>
 						Selected Ingredients
 					</h1>
-					<!-- Dynamically generated ul/option list -->
-					<ul class="divide-y divide-green-300">
+					<!- Dynamically generated ul/option list -->
+					<!--<ul class="divide-y divide-green-300">
 						<li class="p-4 hover:bg-green-100 cursor-pointer">
 							Example recipe
 						</li>
@@ -197,22 +186,9 @@
 					</ul>
 				</div>
 
-				<!-- selected ingredients confirm button -->
-				<button
-					class="
-						btn btn-primary
-						bg-indigo-500
-						hover:bg-indigo-400
-						shadow-lg
-						transform
-						transition
-						hover:-translate-y-0.5
-					"
-					type="button"
-				>
-					Confirm
-				</button>
-			</div>
+				selected ingredients confirm button
+				
+			</div>-->
 
 			<!-- grocery list -->
 			<div
@@ -252,6 +228,20 @@
 						</li>
 					</ul>
 				</div>
+				<button
+					class="
+						btn btn-primary
+						bg-indigo-500
+						hover:bg-indigo-400
+						shadow-lg
+						transform
+						transition
+						hover:-translate-y-0.5
+					"
+					type="button"
+				>
+					Confirm
+				</button>
 			</div>
 		</div>
 
@@ -280,10 +270,10 @@
 			crossorigin="anonymous"
 		></script>
 		
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js%22%3E"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js%22%3E"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 		
-		<script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js%22%3E"></script>
+		<script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js"></script>
 		<script src="./assets/js/script.js"></script>
 	</body>
 </html>
