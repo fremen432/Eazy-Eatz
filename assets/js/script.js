@@ -4,7 +4,7 @@ var ingredientsEl = document.querySelector("#ingredient-ul");
 //var apiMcD = "&apiKey=e00508acdc184205a22e718465e12ad6";
 //var apiClay = "&apiKey=eb1b0d3e64d1482b93094b580e6611ec";
 //var apiDave = "&apiKey=ba77d9351f84470abf1737ae544fa7fa";
-var currentKey = "&apiKey=eb1b0d3e64d1482b93094b580e6611ec";
+var currentKey = "&apiKey=ba77d9351f84470abf1737ae544fa7fa";
 function getFood() {
     var recipe = document.querySelector("#search").value;
     if (recipe != "") {
@@ -23,35 +23,7 @@ function getFood() {
             // adjust spoonId
                 // if spoon recipe is selected, it retrieves it id and places it in the link
             displayRecipes(data);
-            //var spoonId = data.results[0].id;
-            //var infoApiUrl = "https://api.spoonacular.com/recipes/" + spoonId + "/information?includeNutrition=" + nutritionSearch + currentKey;
-            //fetch(infoApiUrl)
-            //.then(function(response) {
-            //    return response.json();
-            //}).then(function(information) {
-            //    console.log(information);
-            //    console.log(information.nutrition );
-            //    console.log("Ingredients: ")
-            //    for (var i = 0; i < information.nutrition.ingredients.length; i++) {
-            //        console.log(information.nutrition.ingredients[i].name + " " + information.nutrition.ingredients[i].amount + " " + information.nutrition.ingredients[i].unit);
-            //    }
-            //    
-            //    console.log("Use analyzed instructions: ");
-            //    var stepCount = 0;
-            //    if (information.analyzedInstructions[0].steps) {
-            //        for (var i = 0; i < information.analyzedInstructions[0].steps.length; i++) {
-            //            stepCount+= 1;
-            //            console.log("Step " + stepCount + ": " + information.analyzedInstructions[0].steps[i].step);
-            //        }
-            //    }
-                // PRICE CONVERTER
-                //var price = Math.round(information.pricePerServing);
-                //price/=100;
-                
-                //console.log("Price/Serving: $" + price + " Estimated Total Price: $" + (price*=information.servings));
-                /////////////////////////////////////////////////
-            //    displayIngredients(information);
-            //});
+            
         });
     }
 };
@@ -61,26 +33,16 @@ var displayRecipes = function(recipeList) {
     
     for(var i = 0; i < recipeList.results.length; i++) {
         
-        //console.log("pizza " + recipeList.results[i].title);
-        var recipeBox = document.createElement("li");
-        
-        //recipe.textContent = recipeList.results[i].title;
-        //var recipeTitle = document.createElement("button");
-        recipeBox.classList = "p-4 hover:bg-green-100 cursor-pointer recipe-id";
-        
-        var recipeTitle = document.createElement("a");
-        recipeTitle.setAttribute("href", "./ingredient.html")
-        //recipeTitle.classList = "p-4 hover:bg-green-100 cursor-pointer recipe-id";
-        
-        
+        var recipeTitle = document.createElement("li");
+        recipeTitle.classList = "p-4 hover:bg-green-100 cursor-pointer recipe-id";
         recipeTitle.textContent = recipeList.results[i].title;
         recipeTitle.value = recipeList.results[i].id;
+        recipeTitle.addEventListener("click", function(event) {
+            console.log(event.target.value);
+            getIngredient(event.target.value);
+        })
         
-        //console.log(recipeList.results[i].title + " " + recipeTitle.value);
-        //console.log(recipeTitle.value);
-        
-        recipeBox.appendChild(recipeTitle);
-        searchRecipe.appendChild(recipeBox);
+        searchRecipe.appendChild(recipeTitle);
         
         
     }
@@ -89,35 +51,36 @@ var displayRecipes = function(recipeList) {
     
     /////////////Fix spoonId to equal the chosen recipe//////////////
     //var spoonId = recipeTitle.value;
-    ////////////////////////////////////////////
-    //var infoApiUrl = "https://api.spoonacular.com/recipes/" + spoonId + "/information?includeNutrition=true" + currentKey;
-    //        fetch(infoApiUrl)
-    //        .then(function(response) {
-    //            return response.json();
-    //        }).then(function(information) {
-    //            console.log(information);
-    //            console.log(information.nutrition );
-    //            console.log("Ingredients: ")
-    //            for (var i = 0; i < information.nutrition.ingredients.length; i++) {
-    //                console.log(information.nutrition.ingredients[i].name + " " + information.nutrition.ingredients[i].amount + " " + information.nutrition.ingredients[i].unit);
-    //            }
+};  
+function getIngredient(spoonId) {
+    var infoApiUrl = "https://api.spoonacular.com/recipes/" + spoonId + "/information?includeNutrition=true" + currentKey;
+    fetch(infoApiUrl)
+    .then(function(response) {
+        return response.json();
+    }).then(function(information) {
+        console.log(information);
+        console.log(information.nutrition );
+        console.log("Ingredients: ")
+        for (var i = 0; i < information.nutrition.ingredients.length; i++) {
+            console.log(information.nutrition.ingredients[i].name + " " + information.nutrition.ingredients[i].amount + " " + information.nutrition.ingredients[i].unit);
+        }
+        displayIngredients(information);
+        console.log("Use analyzed instructions: ");
+        var stepCount = 0;
+        if (information.analyzedInstructions[0].steps) {
+            for (var i = 0; i < information.analyzedInstructions[0].steps.length; i++) {
+                stepCount+= 1;
+                console.log("Step " + stepCount + ": " + information.analyzedInstructions[0].steps[i].step);
+            }
+        }
+        // PRICE CONVERTER
+        //var price = Math.round(information.pricePerServing);
+        //price/=100;
                 
-    //            console.log("Use analyzed instructions: ");
-    //            var stepCount = 0;
-    //            if (information.analyzedInstructions[0].steps) {
-    //                for (var i = 0; i < information.analyzedInstructions[0].steps.length; i++) {
-    //                    stepCount+= 1;
-    //                    console.log("Step " + stepCount + ": " + information.analyzedInstructions[0].steps[i].step);
-    //                }
-    //            }
-                // PRICE CONVERTER
-                //var price = Math.round(information.pricePerServing);
-                //price/=100;
-                
-                //console.log("Price/Serving: $" + price + " Estimated Total Price: $" + (price*=information.servings));
-                /////////////////////////////////////////////////
-    //            displayIngredients(information);
-    //        });
+        //console.log("Price/Serving: $" + price + " Estimated Total Price: $" + (price*=information.servings));
+        /////////////////////////////////////////////////
+        
+    });
 
 };
 
