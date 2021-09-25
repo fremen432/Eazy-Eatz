@@ -8,7 +8,10 @@
 		<link rel="stylesheet" href="./assets/css/tailwind.css" />
 		<link rel="stylesheet" href="./assets/css/box.css" />
 		<link href="./assets/css/tailwind.css" rel="stylesheet" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css"
+		/>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -93,7 +96,6 @@
 				<div class="container">
 					<div class="flex">
 						<div class="bg-white shadow-xl rounded-lg w-full m-4">
-
 							<ul id="recipe-ul" class="divide-y divide-green-300"></ul>
 						</div>
 					</div>
@@ -140,79 +142,6 @@
 					>
 						Ingredient List
 					</h1>
-					<ul class="divide-y divide-green-300" id="ingredient-ul">
-						
-					</ul>
-				</div>
-			</div>
-
-			<!-- selected ingredients -->
-			<!--<div
-				class="
-					max-w-md
-					mx-auto
-					border-2 border-green-200
-					rounded-lg
-					m-2
-					shadow-lg
-				"
-			>
-				<div class="bg-white shadow-xl rounded-lg m-4">
-					<h1
-						class="
-							m-4
-							text-center text-2xl
-							font-bold
-							text-green-500
-							sm:text-4xl
-						"
-					>
-						Selected Ingredients
-					</h1>
-					<!- Dynamically generated ul/option list -->
-					<!--<ul class="divide-y divide-green-300">
-						<li class="p-4 hover:bg-green-100 cursor-pointer">
-							Example recipe
-						</li>
-						<li class="p-4 hover:bg-green-100 cursor-pointer">
-							Example recipe
-						</li>
-						<li class="p-4 hover:bg-green-100 cursor-pointer">
-							Example recipe
-						</li>
-						<li class="p-4 hover:bg-green-100 cursor-pointer">
-							Example recipe
-						</li>
-					</ul>
-				</div>
-
-				selected ingredients confirm button
-				
-			</div>-->
-
-			<!-- grocery list -->
-			<div
-				class="
-					max-w-md
-					mx-auto
-					border-2 border-green-200
-					rounded-lg
-					m-2
-					shadow-lg
-				"
-			>
-				<div class="bg-white shadow-xl rounded-lg m-4">
-					<h1
-						class="
-							m-4
-							text-center text-2xl
-							font-bold
-							text-green-500
-							sm:text-4xl
-						"
-					>
-						Grocery List
-					</h1>
 					<ul class="divide-y divide-green-300">
 						<li class="p-4 hover:bg-green-100 cursor-pointer">
 							Example recipe
@@ -228,6 +157,50 @@
 						</li>
 					</ul>
 				</div>
+			</div>
+
+			<!-- grocery list -->
+			<div
+				class="
+					max-w-md
+					mx-auto
+					border-2 border-green-200
+					rounded-lg
+					m-2
+					shadow-lg
+					print-this
+				"
+			>
+				<div class="bg-white shadow-xl rounded-lg m-4">
+					<h1
+						class="
+							m-4
+							text-center text-2xl
+							font-bold
+							text-green-500
+							sm:text-4xl
+						"
+					>
+						Grocery List
+					</h1>
+					<!-- Dynamically generated ul/option list -->
+					<ul class="divide-y divide-green-300">
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+							Example recipe
+						</li>
+					</ul>
+				</div>
+
+				<!-- selected ingredients confirm button -->
 				<button
 					class="
 						btn btn-primary
@@ -264,15 +237,34 @@
 			</button>
 		</div>
 
+		<!-- Print Button -->
+		<div class="max-w-md mx-auto m-2">
+			<button
+				id="printBtn"
+				class="
+					btn btn-secondary
+					bg-red-500
+					hover:bg-red-400
+					text-white
+					shadow-lg
+					transform
+					transition
+					hover:-translate-y-0.5
+				"
+				type="button"
+				onclick="window.print()"
+			>
+				Print Grocery List
+			</button>
+		</div>
+
 		<script
 			src="https://code.jquery.com/jquery-3.6.0.min.js"
 			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 			crossorigin="anonymous"
 		></script>
-		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-		
 		<script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js"></script>
 		<script src="./assets/js/script.js"></script>
 	</body>

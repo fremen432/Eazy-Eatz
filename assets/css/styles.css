@@ -23,3 +23,19 @@
 		@apply bg-red-500 text-white hover:bg-red-400 focus:ring-red-500 focus:ring-opacity-50 active:bg-red-500;
 	}
 }
+
+/* Print functionality */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .print-this * {
+        visibility: visible;
+    }
+	.print-this {
+		position: absolute;
+		left:0px;
+		top: 0px;
+	}
+	
+} 
