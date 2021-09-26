@@ -1,5 +1,6 @@
 var searchRecipe = document.querySelector("#recipe-ul");
 var ingredientsEl = document.querySelector("#ingredient-ul");
+var secondapi = "https://api.giphy.com/v1/gifs/trending/?api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN";
 //var apiDekotes = "&apiKey=53b19f6822e64faa9c8f717580b163ec";
 //var apiMcD = "&apiKey=e00508acdc184205a22e718465e12ad6";
 //var apiClay = "&apiKey=eb1b0d3e64d1482b93094b580e6611ec";
@@ -88,8 +89,16 @@ var displayIngredients = function(ingr) {
     ingredientsEl.textContent = "";
     for(var i = 0; i < ingr.nutrition.ingredients.length; i++) {
         var ingrList = document.createElement("li");
-        ingrList.classList = "p-4 hover:bg-green-100 cursor-pointer";
-        ingrList.textContent = ingr.nutrition.ingredients[i].name;
-        ingredientsEl.appendChild(ingrList);
+            ingrList.classList = "p-4 hover:bg-green-100 cursor-pointer";
+            ingrList.textContent = ingr.nutrition.ingredients[i].name;
+            ingredientsEl.appendChild(ingrList);
     }
 };
+
+$(".sortable").sortable({
+    connectWith: $(".sortable"),
+    scroll: false,
+    toelrance: "pointer",
+    helper: "clone"
+});
+
