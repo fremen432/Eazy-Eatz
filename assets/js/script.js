@@ -1,8 +1,27 @@
 var searchRecipe = document.querySelector("#recipe-ul");
+var listIngredient = document.querySelector(".ingriedients");
 var apiDekotes = "&apiKey=53b19f6822e64faa9c8f717580b163ec";
 var apiMcD = "&apiKey=e00508acdc184205a22e718465e12ad6";
 var apiClay = "&apiKey=eb1b0d3e64d1482b93094b580e6611ec";
 var apiDave = "&apiKey=ba77d9351f84470abf1737ae544fa7fa";
+
+
+// var concatTest = function() {
+//     var recipe = ["pizza, cheese, peperonni"];
+//     var id = ["123, 456, 789"];
+
+//     var recipeID = recipe.concat(id);
+
+//     console.log(recipeID);
+// };
+// concatTest();
+
+
+
+
+
+
+
 function getFood() {
     //var type = window.prompt("'cuisine', 'excludeCuisine', 'diet'")
     //var search = window.prompt("italianI");
@@ -61,37 +80,43 @@ var displayRecipes = function(recipeList) {
     for(var i = 0; i < recipeList.results.length; i++) {
             
         //console.log("pizza " + recipeList.results[i].title);
+        
         var recipeTitle = document.createElement("li");
         recipeTitle.classList = "p-4 hover:bg-green-100 cursor-pointer recipeTitle";
         recipeTitle.textContent = recipeList.results[i].title;
-        searchRecipe.appendChild(recipeTitle);    
+        searchRecipe.appendChild(recipeTitle);
 
-        // $(".recipeTitle").on("click", function() {
-        
-        //     if (recipeList.results[0].id) {
-        //         console.log(recipeList.results[0].id + " did it work?");
-    
-        //     }
-        //     else {
-        //         console.log("did not work");
-        //     }
-        // });
     }
-
+    // $(".recipeTitle").click(function() {
+    //     for(var i = 0; i <= recipeList.results.id; i++) {
+            
+    //         console.log(recipeList.results);
+                    
+    //         var recipeIngredient = document.createElement("li");
+    //         recipeIngredient.classList = "p-4 hover:bg-green-100 cursor-pointer recipeTitle";
+    //         recipeIngredient.textContent = recipeList.results.id[i];
+    //         listIngredient.appendChild(recipeIngredient);
+    //     }
+    // });
    
+    
+
+
+
+
 };
 
-// var displayIngredients = function(ingriedientList) {
+var displayIngredients = function(ingriedientList) {
     
     
-//     var recipeOnClick = $(recipeTitle).click(function() {
-//         console.log(recipeOnClick, "recipe title was clicked!");
-//         for(var i = 0; i < ingriedientList.results.length; i++) {
+    var recipeOnClick = $(recipeTitle).click(function() {
+        console.log(recipeOnClick, "recipe title was clicked!");
+        for(var i = 0; i < ingriedientList.results.length; i++) {
 
-//             var ingredients = document.querySelector("li");
-//             ingredients.classList = "p-4 hover:bg-green-100 cursor-pointer";
-//             var test = ingredients.textContent = ingriedientList;
-//             console.log(ingriedientList);
-//         }
-//     });
-// };
+            var ingredients = document.querySelector("li");
+            ingredients.classList = "p-4 hover:bg-green-100 cursor-pointer";
+            // var test = ingredients.textContent = ingriedientList;
+            console.log(ingriedientList);
+        }
+    });
+};
