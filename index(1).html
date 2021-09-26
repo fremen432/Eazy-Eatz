@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./assets/css/styles.css" />
+		<link rel="stylesheet" href="./assets/css/tailwind.css" />
+		<link rel="stylesheet" href="./assets/css/box.css" />
+		<link href="./assets/css/tailwind.css" rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+			integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<title>Eazy Eatz</title>
+	</head>
+	<body class="" style="font-family: Montserrat, serif">
+		<!-- header logo -->
+		<header class="text-center text-6xl text-green-500 max-w-md mx-auto py-2">
+			Eazy Eatz
+		</header>
+
+		<div
+			class="sm:container sm:mx-auto xl:grid xl:grid-flow-col xl:auto-cols-auto"
+		>
+			<!-- recipe search -->
+			<div
+				class="
+					max-w-md
+					mx-auto
+					border-2 border-green-200
+					rounded-lg
+					m-2
+					shadow-lg
+				"
+			>
+				<div class="flex flex-row">
+					<div class="">
+						<div class="relative">
+							<div class="absolute top-4 left-3">
+								<i
+									class="fa fa-search text-green-500 z-20 hover:text-green-400"
+								></i>
+							</div>
+							<input
+								id="search"
+								value=""
+								type="text"
+								class="
+									h-14
+									w-96
+									pl-10
+									pr-20
+									rounded-lg
+									z-0
+									focus:shadow focus:outline-none
+								"
+								placeholder="Search for a recipe"
+							/>
+
+							<div class="absolute top-1 right-1">
+								<button
+									type="submit"
+									onclick="getFood()"
+									class="
+										btn btn-secondary
+										bg-green-500
+										hover:bg-green-400
+										text-white
+										shadow-lg
+										transform
+										transition
+										hover:-translate-y-0.5
+									"
+								>
+									Search
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container">
+					<div class="flex">
+						<div class="bg-white shadow-xl rounded-lg w-full m-4">
+							<ul id="recipe-ul" class="divide-y divide-green-300"></ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- Button that shows previous recipe -->
+				<button
+					class="
+						btn btn-secondary
+						bg-green-500
+						hover:bg-green-400
+						text-white
+						shadow-lg
+						transform
+						transition
+						hover:-translate-y-0.5
+					"
+					type="button"
+				>
+					Previous Groceries
+				</button>
+			</div>
+
+			<!-- ingredient list -->
+			<div
+				class="
+					max-w-md
+					mx-auto
+					border-2 border-green-200
+					rounded-lg
+					m-2
+					shadow-lg
+				"
+			>
+				<div class="bg-white shadow-xl rounded-lg m-4">
+					<h1
+						class="
+							ingriedients
+							m-2
+							text-center text-2xl
+							font-bold
+							text-green-500
+							sm:text-4xl
+						"
+					>
+						Ingredient List
+					</h1>
+					<ul class="divide-y divide-green-300 sortable" id="ingredient-ul">
+						
+					</ul>
+				</div>
+			</div>
+
+			<!-- grocery list -->
+			<div
+				class="
+					max-w-md
+					mx-auto
+					border-2 border-green-200
+					rounded-lg
+					m-2
+					shadow-lg
+					print-this
+				"
+			>
+				<div class="bg-white shadow-xl rounded-lg m-4">
+					<h1
+						class="
+							m-4
+							text-center text-2xl
+							font-bold
+							text-green-500
+							sm:text-4xl
+						"
+					>
+						Grocery List
+					</h1>
+					<!-- Dynamically generated ul/option list -->
+					<ul class="divide-y divide-green-300 sortable" >
+						<li class="p-4 hover:bg-green-100 cursor-pointer">
+                            Example
+                        </li>
+					</ul>
+				</div>
+
+				<!-- selected ingredients confirm button -->
+				<button
+					class="
+						btn btn-primary
+						bg-indigo-500
+						hover:bg-indigo-400
+						shadow-lg
+						transform
+						transition
+						hover:-translate-y-0.5
+					"
+					type="button"
+				>
+					Confirm
+				</button>
+			</div>
+		</div>
+
+		<!-- Drag/Drop to remove -->
+		<div class="max-w-md mx-auto m-2">
+			<button
+				class="
+					btn btn-secondary
+					bg-red-500
+					hover:bg-red-400
+					text-white
+					shadow-lg
+					transform
+					transition
+					hover:-translate-y-0.5
+				"
+				type="button"
+			>
+				Drag/Drop to remove
+			</button>
+		</div>
+
+		<!-- Print Button -->
+		<div class="max-w-md mx-auto m-2">
+			<button
+				id="printBtn"
+				class="
+					btn btn-secondary
+					bg-red-500
+					hover:bg-red-400
+					text-white
+					shadow-lg
+					transform
+					transition
+					hover:-translate-y-0.5
+				"
+				type="button"
+				onclick="window.print()"
+			>
+				Print Grocery List
+			</button>
+		</div>
+
+		<script
+			src="https://code.jquery.com/jquery-3.6.0.min.js"
+			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+			crossorigin="anonymous"
+		></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js"></script>
+		<script src="./assets/js/script.js"></script>
+	</body>
+</html>

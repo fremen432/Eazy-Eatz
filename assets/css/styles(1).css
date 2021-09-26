@@ -1,0 +1,41 @@
+#logo {
+	display: inline-block;
+	margin: 4px;
+	float: left;
+	width: auto;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.btn {
+		@apply inline-block px-5 py-3 rounded-lg focus:outline-none focus:ring focus:ring-offset-2 uppercase tracking-wider font-semibold text-sm sm:text-base;
+	}
+	.btn-primary {
+		@apply bg-indigo-500 text-white hover:bg-indigo-400 focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-600;
+	}
+	.btn-secondary {
+		@apply bg-green-500 text-white hover:bg-green-400 focus:ring-green-500 focus:ring-opacity-50 active:bg-green-500;
+	}
+	.btn-tertiary {
+		@apply bg-red-500 text-white hover:bg-red-400 focus:ring-red-500 focus:ring-opacity-50 active:bg-red-500;
+	}
+}
+
+/* Print functionality */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .print-this * {
+        visibility: visible;
+    }
+	.print-this {
+		position: absolute;
+		left:0px;
+		top: 0px;
+	}
+	
+} 
