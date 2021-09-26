@@ -1,11 +1,15 @@
 var searchRecipe = document.querySelector("#recipe-ul");
 var ingredientsEl = document.querySelector("#ingredient-ul");
-var secondapi = "https://api.giphy.com/v1/gifs/trending/?api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN";
+var groceriesEl = document.querySelector("prevgroc-ul");
+var secondapi = "https://api.giphy.com/v1/gifs/search?q=masterchef-food-home-cooks-l0HlCoRBQjCfZAisw&api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN";
 //var apiDekotes = "&apiKey=53b19f6822e64faa9c8f717580b163ec";
 //var apiMcD = "&apiKey=e00508acdc184205a22e718465e12ad6";
 //var apiClay = "&apiKey=eb1b0d3e64d1482b93094b580e6611ec";
 //var apiDave = "&apiKey=ba77d9351f84470abf1737ae544fa7fa";
-var currentKey = "&apiKey=ba77d9351f84470abf1737ae544fa7fa";
+var currentKey = "&apiKey=eb1b0d3e64d1482b93094b580e6611ec";
+        //For the save and load functions
+var ingredients = [];
+
 function getFood() {
     var recipe = document.querySelector("#search").value;
     if (recipe != "") {
@@ -89,16 +93,93 @@ var displayIngredients = function(ingr) {
     ingredientsEl.textContent = "";
     for(var i = 0; i < ingr.nutrition.ingredients.length; i++) {
         var ingrList = document.createElement("li");
-            ingrList.classList = "p-4 hover:bg-green-100 cursor-pointer";
-            ingrList.textContent = ingr.nutrition.ingredients[i].name;
-            ingredientsEl.appendChild(ingrList);
+        ingrList.classList = "p-4 hover:bg-green-100 cursor-pointer";
+        ingrList.textContent = ingr.nutrition.ingredients[i].name;
+        ingredientsEl.appendChild(ingrList);
+        //Making array for ingredients
+        ingredients.push(ingr.nutrition.ingredients[i].name);
+        
     }
+    
 };
 
-$(".sortable").sortable({
-    connectWith: $(".sortable"),
+var disPrevGroc = function() {
+    for(var i = 0; i < ingredients.length; i++) {
+        var grocList = document.createElement("li");
+        grocList.classList = "p-4 hover:bg-green-100 cursor-pointer";
+        grocList.textContent = ingredients;
+        groceriesEl.appendChild(grocList);
+        
+        
+    }
+    console.log("DISPLAY PREVIOUS GROCERIES")
+}
+
+function loadList() {
+    ingredients = JSON.parse(localStorage.getItem("ingredients"));
+    disPrevGroc();
+    
+}
+
+
+
+
+$(".sortable-ul").sortable({
+    connectWith: $(".sortable-ul"),
     scroll: false,
-    toelrance: "pointer",
+    tolerance: "pointer",
     helper: "clone"
 });
+///////////////////////////////////////////////////
+function secondApi() {
+    fetch(
+      "https://api.giphy.com/v1/gifs/search?q=masterchef-food-home-cooks-l0HlCoRBQjCfZAisw&api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN"
+    ).
+    then(function(response) {
+      return response.json();
+    }).then(function(response) {
+      console.log(response);
+      ////////////////////////////
+      var responseContainerEl = document.querySelector('#response-container');
+      responseContainerEl.innerHTML = '';
+      var gifImg = document.createElement('img');
+      gifImg.setAttribute('src', response.data[39].images.fixed_height.url);
+      responseContainerEl.appendChild(gifImg);
+      
 
+
+    });
+};
+///////////////////////MODAL//////////////////////////////////
+var openmodal = document.querySelectorAll('.modal-open')
+for (var i = 0; i < openmodal.length; i++) {
+    openmodal[i].addEventListener('click', function(event){
+        event.preventDefault()
+        toggleModal()
+    })
+}
+          
+const overlay = document.querySelector('.modal-overlay')
+overlay.addEventListener('click', toggleModal)
+          
+//var closemodal = document.querySelectorAll('.modal-close')
+//for (var i = 0; i < closemodal.length; i++) {
+//    closemodal[i].addEventListener('click', toggleModal)
+//}
+function toggleModal () {
+    const body = document.querySelector('body')
+    const modal = document.querySelector('.modal')
+    modal.classList.toggle('opacity-0')
+    modal.classList.toggle('pointer-events-none')
+    body.classList.toggle('modal-active')
+}
+//////////////////////////////////////////////////////////////
+
+var saveList = function() {
+    localStorage.setItem("ingredients", JSON.stringify(ingredients));
+}
+
+function saveGrocery() {
+    saveList();
+    ingredients = [];
+}
