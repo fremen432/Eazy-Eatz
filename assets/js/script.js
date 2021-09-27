@@ -93,21 +93,23 @@ var displayIngredients = function(ingr) {
     ingredientsEl.textContent = "";
     for(var i = 0; i < ingr.nutrition.ingredients.length; i++) {
         var ingrList = document.createElement("li");
-        ingrList.classList = "p-4 hover:bg-green-100 cursor-pointer";
+        ingrList.classList = "p-4 hover:bg-green-100 cursor-pointer ingreds";
         ingrList.textContent = ingr.nutrition.ingredients[i].name;
         ingredientsEl.appendChild(ingrList);
         //Making array for ingredients
-        ingredients.push(ingr.nutrition.ingredients[i].name);
+        //
         
     }
     
 };
 
+
 var disPrevGroc = function() {
+    groceriesEl.textContent = "";
     for(var i = 0; i < ingredients.length; i++) {
         var grocList = document.createElement("li");
         grocList.classList = "p-4 hover:bg-green-100 cursor-pointer";
-        grocList.textContent = ingredients;
+        grocList.textContent = ingredients[i];
         groceriesEl.appendChild(grocList);
         
         
@@ -129,6 +131,7 @@ $(".sortable-ul").sortable({
     scroll: false,
     tolerance: "pointer",
     helper: "clone"
+    
 });
 ///////////////////////////////////////////////////
 function secondApi() {
@@ -181,5 +184,18 @@ var saveList = function() {
 
 function saveGrocery() {
     saveList();
+    
     ingredients = [];
+    groceryIngreds();
+}
+
+var grocUl = document.querySelector("#groc-ul");
+var listItems = grocUl.getElementsByTagName("li");
+var groceryIngreds = function(){
+    for (let i = 0; i <= listItems.length; i++) {
+        var items = listItems[i].innerText;
+        console.log (items);
+        ingredients.push(items);
+    }
+    
 }
