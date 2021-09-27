@@ -37,7 +37,7 @@
 ## About the Project
 
 <div align="center">
-    <img src="./assets/images/Screenshot.png"> 
+    <img src="./assets/images/E.png"> 
 </div>
 
 <!-- User Story -->
