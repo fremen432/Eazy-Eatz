@@ -176,50 +176,42 @@ function toggleModal () {
 }
 //////////////////////////////////////////////////////////////
 
-var saveList = function() {
-    localStorage.setItem("ingredients", JSON.stringify(ingredients));
-}
+// var saveList = function() {
+//     localStorage.setItem("ingredients", JSON.stringify(ingredients));
+// }
 
 function saveGrocery() {
-    saveList();
     
     ingredients = [];
+    
+    
     groceryIngreds();
-<<<<<<< HEAD
     // console.log(ingredients);
+    // saveList();
     console.log("Check 3");
-
-=======
->>>>>>> f1ae84a159ff829e5bb3d46eeca74dcf4c71b95b
+    
 }
 
 var grocUl = document.querySelector("#groc-ul");
 var listItems = grocUl.getElementsByTagName("li");
-<<<<<<< HEAD
 
 var groceryIngreds = function(){
-    for (let i = 0; i <= listItems.length; i++) {
-        var items = listItems[i].innerHTML;
-        console.log (items);
-        ingredients.push(items);
-        console.log("Check 1");
 
-        console.log(ingredients);
-    } 
+        for (let i = 0; i < listItems.length; i++) {
+            
+            var items = listItems[i].innerText;
+            console.log(items);
+        
+            ingredients.push(items);
+            localStorage.setItem("ingredients", JSON.stringify(ingredients));
+
+            console.log("Check 1");
+            console.log(ingredients);
+        };
 
     console.log("Check 2");
 
 };
-=======
-var groceryIngreds = function(){
-    for (let i = 0; i <= listItems.length; i++) {
-        var items = listItems[i].innerText;
-        console.log (items);
-        ingredients.push(items);
-    }
-    
-}
->>>>>>> f1ae84a159ff829e5bb3d46eeca74dcf4c71b95b
 
 
 
