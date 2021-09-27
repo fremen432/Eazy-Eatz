@@ -5,8 +5,11 @@ var groceriesEl = document.querySelector("#prevgroc-ul");
 //var apiMcD = "&apiKey=e00508acdc184205a22e718465e12ad6";
 //var apiClay = "&apiKey=eb1b0d3e64d1482b93094b580e6611ec";
 //var apiDave = "&apiKey=ba77d9351f84470abf1737ae544fa7fa";
+
+// We used mutliple API keys because of limits of free Spoonacular account 
 var currentKey = "&apiKey=eb1b0d3e64d1482b93094b580e6611ec";
-        //For the save and load functions
+
+// Array of li elements from "Ingredient List" section.
 var ingredients = [];
 
 function getFood() {
@@ -27,7 +30,6 @@ function getFood() {
             // adjust spoonId
                 // if spoon recipe is selected, it retrieves it id and places it in the link
             displayRecipes(data);
-            
         });
     }
 };
@@ -47,9 +49,6 @@ var displayRecipes = function(recipeList) {
         })
         searchRecipe.appendChild(recipeTitle);
     }
-
-    /////////////Fix spoonId to equal the chosen recipe//////////////
-    //var spoonId = recipeTitle.value;
 };  
 function getIngredient(spoonId) {
     var infoApiUrl = "https://api.spoonacular.com/recipes/" + spoonId + "/information?includeNutrition=true" + currentKey;
@@ -72,15 +71,7 @@ function getIngredient(spoonId) {
                 console.log("Step " + stepCount + ": " + information.analyzedInstructions[0].steps[i].step);
             }
         }
-        // PRICE CONVERTER
-        //var price = Math.round(information.pricePerServing);
-        //price/=100;
-                
-        //console.log("Price/Serving: $" + price + " Estimated Total Price: $" + (price*=information.servings));
-        /////////////////////////////////////////////////
-        
     });
-
 };
 
 var displayIngredients = function(ingr) {
@@ -89,39 +80,22 @@ var displayIngredients = function(ingr) {
         var ingrList = document.createElement("li");
         ingrList.classList = "p-4 hover:bg-green-100 cursor-pointer ingreds";
         ingrList.textContent = ingr.nutrition.ingredients[i].name;
-        ingredientsEl.appendChild(ingrList);
-        //Making array for ingredients
-        //
-        
+        ingredientsEl.appendChild(ingrList);        
     }
-    
 };
-
-
 
 function loadList() {
     ingredients = JSON.parse(localStorage.getItem("ingredients"));
     console.log(ingredients)
     
-    console.log("DISPLAY PREVIOUS GROCERIES")
-
-    // groceriesEl.textContent = "";
-
-
     for(var i = 0; i < ingredients.length; i++) {
-
-        // console.log(ingredients)
-        console.log(ingredients[i])
-
         var prevGroceryLi = document.createElement("li");
         prevGroceryLi.classList = "p-4 hover:bg-green-100 cursor-pointer";
         prevGroceryLi.textContent = ingredients[i];
         console.log(prevGroceryLi);
         groceriesEl.appendChild(prevGroceryLi);
-        
     }
 }
-
 
 $(".sortable-ul").sortable({
     connectWith: $(".sortable-ul"),
@@ -169,19 +143,14 @@ function toggleModal () {
 //////////////////////////////////////////////////////////////
 
 function saveGrocery() {
-    
     ingredients = [];
-    
     groceryIngreds();
-    console.log("Check 3");
-    
 }
 
 var grocUl = document.querySelector("#groc-ul");
 var listItems = grocUl.getElementsByTagName("li");
 
 var groceryIngreds = function(){
-
         for (let i = 0; i < listItems.length; i++) {
             
             var items = listItems[i].innerText;
@@ -190,14 +159,7 @@ var groceryIngreds = function(){
             ingredients.push(items);
             localStorage.setItem("ingredients", JSON.stringify(ingredients));
 
-            console.log("Check 1");
             console.log(ingredients);
         };
 
-    console.log("Check 2");
-
 };
-
-
-
-// This is a test change
