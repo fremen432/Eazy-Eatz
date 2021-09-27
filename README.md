@@ -47,10 +47,10 @@
 ```
 AS A person who wants to eat a nutritious meal,
 I WANT an application that can give me ideas for different nutritious recipes based on a few given criteria,
-SO THAT I can find a recipe for a nutritious meal
+SO THAT I can find a recipe for a nutritious meal.
 GIVEN I have a recipe I want to cook,
-I ALSO WANT an application that can list the ingredients I need for that recipe and  display them in a shopping list with included nutrition facts and average prices,
-SO THAT I know what ingredients I will need to buy while shopping for my meal.
+I ALSO WANT an application that can list the ingredients I need for that recipe, display them in a shopping list and include step-by-step instructions on of how to cook the meal,
+SO THAT I know what ingredients I will need to buy and I will know how to cook the meal.
 ```
 
 <!-- Acceptance Criteria -->
@@ -62,9 +62,14 @@ GIVEN I am using an application that generates ingredients for a recipe,
 WHEN I enter recipe specifications in the search bar,
 THEN I am presented with multiple recipe options related to my given specifications,
 WHEN I choose which recipe I want to cook,
-THEN I am presented with a shopping list of ingredients that make up that recipe.
-WHEN I view the shopping list,
-THEN I can see the average price of the recipe.
+THEN I am presented with a list of ingredients that make up that recipe,
+WHEN I drag which ingredients I want into the grocery list and click the "Save List" button,
+THEN I my grocery list is saved to local storage,
+WHEN I click the "Previous Groceries" button,
+THEN the ingredients of any previous grocery list will be populated in the Previous Grocery list,
+WHEN I look at the recipe instructions, 
+THEN I see step-by-step instructions for how to cook my selected meal.
+
 ```
 
 <!-- Project Requirements -->
