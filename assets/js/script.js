@@ -1,6 +1,6 @@
 var searchRecipe = document.querySelector("#recipe-ul");
 var ingredientsEl = document.querySelector("#ingredient-ul");
-var groceriesEl = document.querySelector("prevgroc-ul");
+var groceriesEl = document.querySelector("#prevgroc-ul");
 //var apiDekotes = "&apiKey=53b19f6822e64faa9c8f717580b163ec";
 //var apiMcD = "&apiKey=e00508acdc184205a22e718465e12ad6";
 //var apiClay = "&apiKey=eb1b0d3e64d1482b93094b580e6611ec";
@@ -45,14 +45,9 @@ var displayRecipes = function(recipeList) {
             console.log(event.target.value);
             getIngredient(event.target.value);
         })
-        
         searchRecipe.appendChild(recipeTitle);
-        
-        
     }
 
-
-    
     /////////////Fix spoonId to equal the chosen recipe//////////////
     //var spoonId = recipeTitle.value;
 };  
@@ -103,26 +98,29 @@ var displayIngredients = function(ingr) {
 };
 
 
-var disPrevGroc = function() {
-    groceriesEl.textContent = "";
-    for(var i = 0; i < ingredients.length; i++) {
-        var grocList = document.createElement("li");
-        grocList.classList = "p-4 hover:bg-green-100 cursor-pointer";
-        grocList.textContent = ingredients[i];
-        groceriesEl.appendChild(grocList);
-        
-        
-    }
-    console.log("DISPLAY PREVIOUS GROCERIES")
-}
 
 function loadList() {
     ingredients = JSON.parse(localStorage.getItem("ingredients"));
-    disPrevGroc();
+    console.log(ingredients)
     
+    console.log("DISPLAY PREVIOUS GROCERIES")
+
+    // groceriesEl.textContent = "";
+
+
+    for(var i = 0; i < ingredients.length; i++) {
+
+        // console.log(ingredients)
+        console.log(ingredients[i])
+
+        var prevGroceryLi = document.createElement("li");
+        prevGroceryLi.classList = "p-4 hover:bg-green-100 cursor-pointer";
+        prevGroceryLi.textContent = ingredients[i];
+        console.log(prevGroceryLi);
+        groceriesEl.appendChild(prevGroceryLi);
+        
+    }
 }
-
-
 
 
 $(".sortable-ul").sortable({
@@ -146,11 +144,9 @@ function secondApi() {
         var gifImg = document.createElement('img');
         gifImg.setAttribute('src', response.data[39].images.fixed_height.url);
         responseContainerEl.appendChild(gifImg);
-
-
-
     });
 };
+
 ///////////////////////MODAL//////////////////////////////////
 var openmodal = document.querySelectorAll('.modal-open')
 for (var i = 0; i < openmodal.length; i++) {
@@ -163,10 +159,6 @@ for (var i = 0; i < openmodal.length; i++) {
 const overlay = document.querySelector('.modal-overlay')
 overlay.addEventListener('click', toggleModal)
 
-//var closemodal = document.querySelectorAll('.modal-close')
-//for (var i = 0; i < closemodal.length; i++) {
-//    closemodal[i].addEventListener('click', toggleModal)
-//}
 function toggleModal () {
     const body = document.querySelector('body')
     const modal = document.querySelector('.modal')
@@ -176,18 +168,11 @@ function toggleModal () {
 }
 //////////////////////////////////////////////////////////////
 
-// var saveList = function() {
-//     localStorage.setItem("ingredients", JSON.stringify(ingredients));
-// }
-
 function saveGrocery() {
     
     ingredients = [];
     
-    
     groceryIngreds();
-    // console.log(ingredients);
-    // saveList();
     console.log("Check 3");
     
 }
