@@ -135,18 +135,18 @@ $(".sortable-ul").sortable({
 ///////////////////////////////////////////////////
 function secondApi() {
     fetch(
-      "https://api.giphy.com/v1/gifs/search?q=masterchef-food-home-cooks-l0HlCoRBQjCfZAisw&api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN"
+        "https://api.giphy.com/v1/gifs/search?q=masterchef-food-home-cooks-l0HlCoRBQjCfZAisw&api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN"
     ).
     then(function(response) {
-      return response.json();
+        return response.json();
     }).then(function(response) {
       ////////////////////////////
-      var responseContainerEl = document.querySelector('#response-container');
-      responseContainerEl.innerHTML = '';
-      var gifImg = document.createElement('img');
-      gifImg.setAttribute('src', response.data[39].images.fixed_height.url);
-      responseContainerEl.appendChild(gifImg);
-      
+        var responseContainerEl = document.querySelector('#response-container');
+        responseContainerEl.innerHTML = '';
+        var gifImg = document.createElement('img');
+        gifImg.setAttribute('src', response.data[39].images.fixed_height.url);
+        responseContainerEl.appendChild(gifImg);
+
 
 
     });
@@ -159,10 +159,10 @@ for (var i = 0; i < openmodal.length; i++) {
         toggleModal()
     })
 }
-          
+
 const overlay = document.querySelector('.modal-overlay')
 overlay.addEventListener('click', toggleModal)
-          
+
 //var closemodal = document.querySelectorAll('.modal-close')
 //for (var i = 0; i < closemodal.length; i++) {
 //    closemodal[i].addEventListener('click', toggleModal)
