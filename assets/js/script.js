@@ -1,7 +1,6 @@
 var searchRecipe = document.querySelector("#recipe-ul");
 var ingredientsEl = document.querySelector("#ingredient-ul");
 var groceriesEl = document.querySelector("prevgroc-ul");
-var secondapi = "https://api.giphy.com/v1/gifs/search?q=masterchef-food-home-cooks-l0HlCoRBQjCfZAisw&api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN";
 //var apiDekotes = "&apiKey=53b19f6822e64faa9c8f717580b163ec";
 //var apiMcD = "&apiKey=e00508acdc184205a22e718465e12ad6";
 //var apiClay = "&apiKey=eb1b0d3e64d1482b93094b580e6611ec";
@@ -93,21 +92,23 @@ var displayIngredients = function(ingr) {
     ingredientsEl.textContent = "";
     for(var i = 0; i < ingr.nutrition.ingredients.length; i++) {
         var ingrList = document.createElement("li");
-        ingrList.classList = "p-4 hover:bg-green-100 cursor-pointer";
+        ingrList.classList = "p-4 hover:bg-green-100 cursor-pointer ingreds";
         ingrList.textContent = ingr.nutrition.ingredients[i].name;
         ingredientsEl.appendChild(ingrList);
         //Making array for ingredients
-        ingredients.push(ingr.nutrition.ingredients[i].name);
+        //
         
     }
     
 };
 
+
 var disPrevGroc = function() {
+    groceriesEl.textContent = "";
     for(var i = 0; i < ingredients.length; i++) {
         var grocList = document.createElement("li");
         grocList.classList = "p-4 hover:bg-green-100 cursor-pointer";
-        grocList.textContent = ingredients;
+        grocList.textContent = ingredients[i];
         groceriesEl.appendChild(grocList);
         
         
@@ -129,6 +130,7 @@ $(".sortable-ul").sortable({
     scroll: false,
     tolerance: "pointer",
     helper: "clone"
+    
 });
 ///////////////////////////////////////////////////
 function secondApi() {
@@ -138,7 +140,6 @@ function secondApi() {
     then(function(response) {
       return response.json();
     }).then(function(response) {
-      console.log(response);
       ////////////////////////////
       var responseContainerEl = document.querySelector('#response-container');
       responseContainerEl.innerHTML = '';
@@ -181,5 +182,27 @@ var saveList = function() {
 
 function saveGrocery() {
     saveList();
+    
     ingredients = [];
+    groceryIngreds();
+    // console.log(ingredients);
+    console.log("Check 3");
+
 }
+
+var grocUl = document.querySelector("#groc-ul");
+var listItems = grocUl.getElementsByTagName("li");
+
+var groceryIngreds = function(){
+    for (let i = 0; i <= listItems.length; i++) {
+        var items = listItems[i].innerHTML;
+        console.log (items);
+        ingredients.push(items);
+        console.log("Check 1");
+
+        console.log(ingredients);
+    } 
+
+    console.log("Check 2");
+
+};
