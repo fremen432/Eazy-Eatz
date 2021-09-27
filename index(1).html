@@ -6,9 +6,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./assets/css/styles.css" />
 		<link rel="stylesheet" href="./assets/css/tailwind.css" />
-		<!--<link rel="stylesheet" href="./assets/css/modal.css" />-->
+		<link rel="stylesheet" href="./assets/css/box.css" />
 		<link href="./assets/css/tailwind.css" rel="stylesheet" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css"
+		/>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -22,11 +25,10 @@
 			crossorigin="anonymous"
 			referrerpolicy="no-referrer"
 		/>
-		
 		<title>Eazy Eatz</title>
 	</head>
 	<body class="" style="font-family: Montserrat, serif">
-		<!-- Header -->
+		<!-- header logo -->
 		<header class="text-center text-6xl text-green-500 max-w-md mx-auto py-2">
 			Eazy Eatz
 		</header>
@@ -34,7 +36,7 @@
 		<div
 			class="sm:container sm:mx-auto xl:grid xl:grid-flow-col xl:auto-cols-auto"
 		>
-			<!-- Recipe Search -->
+			<!-- recipe search -->
 			<div
 				class="
 					max-w-md
@@ -69,7 +71,6 @@
 								placeholder="Search for a recipe"
 							/>
 
-							<!-- Search Button -->
 							<div class="absolute top-1 right-1">
 								<button
 									type="submit"
@@ -95,15 +96,30 @@
 				<div class="container">
 					<div class="flex">
 						<div class="bg-white shadow-xl rounded-lg w-full m-4">
-
 							<ul id="recipe-ul" class="divide-y divide-green-300"></ul>
 						</div>
 					</div>
 				</div>
 
+				<!-- Button that shows previous recipe -->
+				<button
+					class="
+						btn btn-secondary
+						bg-green-500
+						hover:bg-green-400
+						text-white
+						shadow-lg
+						transform
+						transition
+						hover:-translate-y-0.5
+					"
+					type="button"
+				>
+					Previous Groceries
+				</button>
 			</div>
 
-			<!-- Ingredient List -->
+			<!-- ingredient list -->
 			<div
 				class="
 					max-w-md
@@ -117,6 +133,7 @@
 				<div class="bg-white shadow-xl rounded-lg m-4">
 					<h1
 						class="
+							ingriedients
 							m-2
 							text-center text-2xl
 							font-bold
@@ -126,13 +143,13 @@
 					>
 						Ingredient List
 					</h1>
-					<ul class="divide-y divide-green-300 sortable-ul" id="ingredient-ul">
+					<ul class="divide-y divide-green-300 sortable" id="ingredient-ul">
 						
 					</ul>
 				</div>
 			</div>
 
-			<!-- Grocery List -->
+			<!-- grocery list -->
 			<div
 				class="
 					max-w-md
@@ -141,6 +158,7 @@
 					rounded-lg
 					m-2
 					shadow-lg
+					print-this
 				"
 			>
 				<div class="bg-white shadow-xl rounded-lg m-4">
@@ -155,12 +173,15 @@
 					>
 						Grocery List
 					</h1>
-					<ul class="divide-y divide-green-300 sortable-ul" id="groc-ul">
+					<!-- Dynamically generated ul/option list -->
+					<ul class="divide-y divide-green-300 sortable" >
 						<li class="p-4 hover:bg-green-100 cursor-pointer">
-							<!-- *Drag ingredients here* -->
-						</li>
+                            Example
+                        </li>
 					</ul>
 				</div>
+
+				<!-- selected ingredients confirm button -->
 				<button
 					class="
 						btn btn-primary
@@ -170,50 +191,21 @@
 						transform
 						transition
 						hover:-translate-y-0.5
-						modal-open
 					"
 					type="button"
-					onclick="secondApi(); saveGrocery();"
-					
 				>
-					Save List
+					Confirm
 				</button>
 			</div>
-			<!-- Previous Grocery List -->
-			<div
-				class="
-					max-w-md
-					mx-auto
-					border-2 border-green-200
-					rounded-lg
-					m-2
-					shadow-lg
-				"
-			>
-				<div class="bg-white shadow-xl rounded-lg m-4">
-					<h1
-						class="
-							m-4
-							text-center text-2xl
-							font-bold
-							text-green-500
-							sm:text-4xl
-						"
-					>
-						Previous Grocery List
-					</h1>
-					<ul class="divide-y divide-green-300" id="prevgroc-ul">
-						<!-- <li class="p-4 hover:bg-green-100 cursor-pointer">
-							Example
-						</li> -->
-					</ul>
-				</div>
-				<!-- Previous Groceries Button -->
-				<button
+		</div>
+
+		<!-- Drag/Drop to remove -->
+		<div class="max-w-md mx-auto m-2">
+			<button
 				class="
 					btn btn-secondary
-					bg-green-500
-					hover:bg-green-400
+					bg-red-500
+					hover:bg-red-400
 					text-white
 					shadow-lg
 					transform
@@ -221,25 +213,30 @@
 					hover:-translate-y-0.5
 				"
 				type="button"
-				onclick="loadList()"
 			>
-				Previous Groceries
+				Drag/Drop to remove
 			</button>
-			
-			</div>
 		</div>
 
-
-		<!-- Drag/Drop to remove -->
-		
-				<!--GIF MODAL-->
-		<div class="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
-			<div class="modal-overlay absolute w-full h-full bg-gray-900 opacity-50"></div>
-			
-			<div class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
-				<div class="modal-content py-4 text-left px-6" id="response-container">	
-				</div>
-			</div>
+		<!-- Print Button -->
+		<div class="max-w-md mx-auto m-2">
+			<button
+				id="printBtn"
+				class="
+					btn btn-secondary
+					bg-red-500
+					hover:bg-red-400
+					text-white
+					shadow-lg
+					transform
+					transition
+					hover:-translate-y-0.5
+				"
+				type="button"
+				onclick="window.print()"
+			>
+				Print Grocery List
+			</button>
 		</div>
 
 		<script
@@ -247,10 +244,8 @@
 			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 			crossorigin="anonymous"
 		></script>
-		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-		
 		<script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch@0.2.3/jquery.ui.touch-punch.min.js"></script>
 		<script src="./assets/js/script.js"></script>
 	</body>
