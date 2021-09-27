@@ -8,7 +8,7 @@ var instructionsEl = document.querySelector("#instructions-ul");
 //var apiDave = "&apiKey=ba77d9351f84470abf1737ae544fa7fa";
 
 // We used mutliple API keys because of limits of free Spoonacular account 
-var currentKey = "&apiKey=eb1b0d3e64d1482b93094b580e6611ec";
+var currentKey = "&apiKey=53b19f6822e64faa9c8f717580b163ec";
 
 // Array of li elements from "Ingredient List" section.
 var ingredients = [];
@@ -76,12 +76,18 @@ function getIngredient(spoonId) {
                 console.log("Check 1")
 
                 var instructionsLi = document.createElement("li");
-                instructionsLi.classList = "p-4 hover:bg-green-100 cursor-pointer ingreds";
+                instructionsLi.classList = "p-4 hover:bg-green-100 cursor-pointer";
                 instructionsLi.textContent = stepCount + ": " + information.analyzedInstructions[0].steps[i].step;
                 instructionsEl.appendChild(instructionsLi);
                 console.log("Check 2")
 
             }
+        }
+        else {
+            var instructionsNo = document.createElement("li");
+            instructionsNo.classList = "p-4 hover:bg-green-100 cursor-pointer";
+            instructionsNo.textContent = "No Recipe Instrucions Found"
+            instructionsEl.appendChild(instructionsNo);
         }
     });
 
