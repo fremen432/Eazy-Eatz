@@ -106,7 +106,7 @@ var displayIngredients = function(ingr) {
 function loadList() {
     ingredients = JSON.parse(localStorage.getItem("ingredients"));
     console.log(ingredients)
-    
+    groceriesEl.textContent = "";
     for(var i = 0; i < ingredients.length; i++) {
         var prevGroceryLi = document.createElement("li");
         prevGroceryLi.classList = "p-4 hover:bg-green-100 cursor-pointer";
