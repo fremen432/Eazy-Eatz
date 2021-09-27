@@ -1,6 +1,7 @@
 var searchRecipe = document.querySelector("#recipe-ul");
 var ingredientsEl = document.querySelector("#ingredient-ul");
 var groceriesEl = document.querySelector("#prevgroc-ul");
+var instructionsEl = document.querySelector("#instructions-ul");
 //var apiDekotes = "&apiKey=53b19f6822e64faa9c8f717580b163ec";
 //var apiMcD = "&apiKey=e00508acdc184205a22e718465e12ad6";
 //var apiClay = "&apiKey=eb1b0d3e64d1482b93094b580e6611ec";
@@ -66,12 +67,24 @@ function getIngredient(spoonId) {
         console.log("Use analyzed instructions: ");
         var stepCount = 0;
         if (information.analyzedInstructions[0].steps) {
+            instructionsEl.textContent = ""
             for (var i = 0; i < information.analyzedInstructions[0].steps.length; i++) {
+                
                 stepCount+= 1;
                 console.log("Step " + stepCount + ": " + information.analyzedInstructions[0].steps[i].step);
+
+                console.log("Check 1")
+
+                var instructionsLi = document.createElement("li");
+                instructionsLi.classList = "p-4 hover:bg-green-100 cursor-pointer ingreds";
+                instructionsLi.textContent = stepCount + ": " + information.analyzedInstructions[0].steps[i].step;
+                instructionsEl.appendChild(instructionsLi);
+                console.log("Check 2")
+
             }
         }
     });
+
 };
 
 var displayIngredients = function(ingr) {
